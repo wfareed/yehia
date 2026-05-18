@@ -45,7 +45,7 @@ export default function AboutPage() {
   ]
 
   const timeline = [
-    { year: "2018", title: ar ? "التأسيس" : "Founded", description: ar ? "تأسست EduBridge في الرياض، المملكة العربية السعودية." : "EduBridge was established in Riyadh, Saudi Arabia." },
+    { year: "2018", title: ar ? "التأسيس" : "Founded", description: ar ? "تأسست Vision Edge في الرياض، المملكة العربية السعودية." : "Vision Edge was established in Riyadh, Saudi Arabia." },
     { year: "2019", title: ar ? "أول 100 طالب" : "First 100 Students", description: ar ? "نجحنا في إلحاق أول 100 طالب بجامعات دولية." : "Successfully placed our first 100 students in international universities." },
     { year: "2020", title: ar ? "التوسع العالمي" : "Global Expansion", description: ar ? "توسعنا في شراكات تشمل أكثر من 10 دول عبر 5 قارات." : "Expanded partnerships to 10+ countries across 5 continents." },
     { year: "2021", title: ar ? "التحول الرقمي" : "Digital Transformation", description: ar ? "أطلقنا منصتنا الرقمية لتسهيل طلبات الطلاب." : "Launched our digital platform for seamless student applications." },
@@ -112,7 +112,7 @@ export default function AboutPage() {
                   <div className="flex justify-center mb-4">
                     <Logo size={72} showText={false} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">EduBridge</h3>
+                  <h3 className="text-2xl font-bold text-white">Vision Edge</h3>
                   <p className="text-emerald-400 mt-2">{ar ? 'جسرك نحو التعليم العالمي' : 'Your Gateway to World-Class Education'}</p>
                 </div>
               </div>

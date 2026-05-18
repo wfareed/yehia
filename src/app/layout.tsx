@@ -15,8 +15,8 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
-  title: "EduBridge - Your Gateway to World-Class Education",
-  description: "EduBridge is a premier educational consultancy helping students achieve their dreams of studying abroad. Free consultations, university admissions, visa guidance, and full pre-travel support.",
+  title: "Vision Edge - Your Gateway to World-Class Education",
+  description: "Vision Edge is a premier educational consultancy helping students achieve their dreams of studying abroad. Free consultations, university admissions, visa guidance, and full pre-travel support.",
   keywords: ["study abroad", "scholarship", "university admission", "educational consultancy", "international education"],
 }
 

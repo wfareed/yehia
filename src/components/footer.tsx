@@ -130,7 +130,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">info@edubridge.com</span>
+                <span className="text-slate-300 text-sm">info@visionedge.com</span>
               </li>
             </ul>
           </div>
@@ -172,7 +172,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm">
-            آ© {new Date().getFullYear()} EduBridge. All rights reserved.
+            © {new Date().getFullYear()} Vision Edge. All rights reserved.
           </p>
           <Button
             variant="ghost"

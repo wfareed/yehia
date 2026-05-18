@@ -27,7 +27,7 @@ export const translations = {
     // About
     about: {
       whoWeAre: "Who We Are",
-      description: "EduBridge is a Saudi agency offering free services for studying abroad. We provide comprehensive educational consultations to help students achieve their dreams of international education.",
+      description: "Vision Edge is a Saudi agency offering free services for studying abroad. We provide comprehensive educational consultations to help students achieve their dreams of international education.",
       whyChooseUs: "Why Choose Us?",
       points: [
         "Free educational consultations",
@@ -122,8 +122,8 @@ export const translations = {
     // About
     about: {
       whoWeAre: "من نحن",
-      description: "EduBridge وكالة تعليمية متخصصة تقدم خدمات متكاملة للدراسة في الخارج. نقدم استشارات تعليمية شاملة لمساعدة الطلاب على تحقيق أحلامهم في التعليم الدولي.",
-      whyChooseUs: "لماذا EduBridge؟",
+      description: "Vision Edge وكالة تعليمية متخصصة تقدم خدمات متكاملة للدراسة في الخارج. نقدم استشارات تعليمية شاملة لمساعدة الطلاب على تحقيق أحلامهم في التعليم الدولي.",
+      whyChooseUs: "لماذا Vision Edge؟",
       points: [
         "استشارات تعليمية مجانية",
         "شراكات مع أفضل الجامعات حول العالم",

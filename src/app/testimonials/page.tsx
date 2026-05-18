@@ -25,7 +25,7 @@ export default function TestimonialsPage() {
       country: "Studying in UK",
       university: "University of Manchester",
       rating: 5,
-      text: "EduBridge made my dream of studying in the UK a reality. Their guidance throughout the application process was exceptional. They handled everything from university selection to visa processing seamlessly.",
+      text: "Vision Edge made my dream of studying in the UK a reality. Their guidance throughout the application process was exceptional. They handled everything from university selection to visa processing seamlessly.",
       initials: "AR",
     },
     {
@@ -33,7 +33,7 @@ export default function TestimonialsPage() {
       country: "Studying in Canada",
       university: "University of Toronto",
       rating: 5,
-      text: "From university selection to visa approval, EduBridge was there every step of the way. The team is incredibly supportive and professional. I couldn't have done it without them!",
+      text: "From university selection to visa approval, Vision Edge was there every step of the way. The team is incredibly supportive and professional. I couldn't have done it without them!",
       initials: "SH",
     },
     {
@@ -41,7 +41,7 @@ export default function TestimonialsPage() {
       country: "Studying in Australia",
       university: "University of Melbourne",
       rating: 5,
-      text: "The team at EduBridge provided excellent support and helped me secure a scholarship. Their knowledge of the Australian education system is impressive.",
+      text: "The team at Vision Edge provided excellent support and helped me secure a scholarship. Their knowledge of the Australian education system is impressive.",
       initials: "OK",
     },
     {
@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
       country: "Studying in Ireland",
       university: "Trinity College Dublin",
       rating: 5,
-      text: "I was overwhelmed by the study abroad process until I found EduBridge. They simplified everything and got me into my dream university in Dublin.",
+      text: "I was overwhelmed by the study abroad process until I found Vision Edge. They simplified everything and got me into my dream university in Dublin.",
       initials: "FD",
     },
     {
@@ -57,7 +57,7 @@ export default function TestimonialsPage() {
       country: "Studying in USA",
       university: "UCLA",
       rating: 5,
-      text: "Professional, dedicated, and trustworthy. EduBridge helped me navigate the complex US university application process and I'm now at UCLA!",
+      text: "Professional, dedicated, and trustworthy. Vision Edge helped me navigate the complex US university application process and I'm now at UCLA!",
       initials: "MS",
     },
     {
@@ -65,7 +65,7 @@ export default function TestimonialsPage() {
       country: "Studying in Germany",
       university: "TU Munich",
       rating: 5,
-      text: "Getting a free education in Germany seemed impossible until EduBridge guided me through the process. Their expertise in German university admissions is outstanding.",
+      text: "Getting a free education in Germany seemed impossible until Vision Edge guided me through the process. Their expertise in German university admissions is outstanding.",
       initials: "NH",
     },
     {
@@ -73,7 +73,7 @@ export default function TestimonialsPage() {
       country: "Studying in Malaysia",
       university: "University of Malaya",
       rating: 5,
-      text: "EduBridge made studying abroad affordable for me. They found me the perfect program in Malaysia with great scholarship support.",
+      text: "Vision Edge made studying abroad affordable for me. They found me the perfect program in Malaysia with great scholarship support.",
       initials: "KM",
     },
     {

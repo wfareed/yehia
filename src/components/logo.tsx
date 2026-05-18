@@ -9,56 +9,62 @@ interface LogoProps {
 export default function Logo({ size = 38, showText = true, textClassName = "" }: LogoProps) {
   return (
     <div className="flex items-center gap-2.5">
-      {/* SVG Icon — suspension bridge */}
+      {/* SVG Icon — stylised eye representing Vision + sharp geometric edge */}
       <svg
         width={size}
         height={size}
         viewBox="0 0 40 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        aria-label="EduBridge logo icon"
+        aria-label="Vision Edge logo icon"
       >
         <defs>
           <linearGradient id="bgGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
             <stop stopColor="#059669" />
             <stop offset="1" stopColor="#0d9488" />
           </linearGradient>
+          <linearGradient id="irisGrad" x1="14" y1="14" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#d1fae5" />
+            <stop offset="1" stopColor="#a7f3d0" />
+          </linearGradient>
         </defs>
 
         {/* Rounded background */}
         <rect width="40" height="40" rx="10" fill="url(#bgGrad)" />
 
-        {/* Road / deck */}
-        <line x1="3" y1="31" x2="37" y2="31" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+        {/* Outer eye / almond shape */}
+        <path
+          d="M4,20 Q12,9 20,9 Q28,9 36,20 Q28,31 20,31 Q12,31 4,20 Z"
+          stroke="white"
+          strokeWidth="2"
+          fill="none"
+          strokeLinejoin="round"
+        />
 
-        {/* Left tower */}
-        <line x1="12" y1="31" x2="12" y2="14" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-        {/* Left tower cap */}
-        <line x1="9" y1="14" x2="15" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        {/* Iris */}
+        <circle cx="20" cy="20" r="6.5" fill="url(#irisGrad)" />
 
-        {/* Right tower */}
-        <line x1="28" y1="31" x2="28" y2="14" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-        {/* Right tower cap */}
-        <line x1="25" y1="14" x2="31" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        {/* Pupil */}
+        <circle cx="20" cy="20" r="3.2" fill="#064e3b" />
 
-        {/* Main suspension cable (catenary arch) */}
-        <path d="M12 14 Q20 7 28 14" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" />
+        {/* Highlight glint */}
+        <circle cx="17.8" cy="17.8" r="1.3" fill="white" opacity="0.85" />
 
-        {/* Vertical suspender cables */}
-        <line x1="16" y1="12.2" x2="16" y2="31" stroke="rgba(255,255,255,0.65)" strokeWidth="1.2" strokeLinecap="round" />
-        <line x1="20" y1="9.5" x2="20" y2="31" stroke="rgba(255,255,255,0.65)" strokeWidth="1.2" strokeLinecap="round" />
-        <line x1="24" y1="12.2" x2="24" y2="31" stroke="rgba(255,255,255,0.65)" strokeWidth="1.2" strokeLinecap="round" />
+        {/* Left edge accent line */}
+        <line x1="2" y1="20" x2="5" y2="20" stroke="white" strokeWidth="1.8" strokeLinecap="round" opacity="0.7" />
+        {/* Right edge accent line */}
+        <line x1="35" y1="20" x2="38" y2="20" stroke="white" strokeWidth="1.8" strokeLinecap="round" opacity="0.7" />
 
-        {/* Small graduation cap above bridge (top-center) */}
-        <polygon points="20,4 26,7 20,10 14,7" fill="rgba(255,255,255,0.9)" />
-        <rect x="18" y="9.5" width="4" height="3" rx="0.5" fill="rgba(255,255,255,0.75)" />
+        {/* Top-right small spark / edge mark */}
+        <line x1="29" y1="11" x2="32" y2="8" stroke="white" strokeWidth="1.4" strokeLinecap="round" opacity="0.6" />
+        <line x1="31" y1="13" x2="35" y2="11" stroke="white" strokeWidth="1.4" strokeLinecap="round" opacity="0.4" />
       </svg>
 
       {/* Wordmark */}
       {showText && (
         <span className={`font-bold text-lg leading-none tracking-tight ${textClassName}`}>
-          <span className="text-emerald-400">Edu</span>
-          <span className="text-white">Bridge</span>
+          <span className="text-emerald-400">Vision</span>
+          <span className="text-white"> Edge</span>
         </span>
       )}
     </div>

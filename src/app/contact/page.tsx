@@ -152,7 +152,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.emailLabel}</h4>
-                        <p className="text-slate-300 text-sm">info@EduBridge.com</p>
+                        <p className="text-slate-300 text-sm">info@visionedge.com</p>
                       </div>
                     </div>
 

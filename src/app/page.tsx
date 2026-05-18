@@ -60,19 +60,19 @@ export default function Home() {
       name: "Ahmed Al-Rashid",
       country: "Studying in UK",
       rating: 5,
-      text: "EduBridge made my dream of studying in the UK a reality. Their guidance throughout the application process was exceptional.",
+      text: "Vision Edge made my dream of studying in the UK a reality. Their guidance throughout the application process was exceptional.",
     },
     {
       name: "Sara Hassan",
       country: "Studying in Canada",
       rating: 5,
-      text: "From university selection to visa approval, EduBridge was there every step of the way. Highly recommended!",
+      text: "From university selection to visa approval, Vision Edge was there every step of the way. Highly recommended!",
     },
     {
       name: "Omar Khalid",
       country: "Studying in Australia",
       rating: 5,
-      text: "The team at EduBridge provided excellent support and helped me secure a scholarship. I couldn't have done it without them.",
+      text: "The team at Vision Edge provided excellent support and helped me secure a scholarship. I couldn't have done it without them.",
     },
   ]
 
