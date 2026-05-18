@@ -60,7 +60,7 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <Logo size={36} textClassName="hidden sm:inline" />
+            <Logo size={96} />
           </Link>
 
           {/* Desktop Navigation */}

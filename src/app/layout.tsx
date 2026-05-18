@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "Vision Edge - Your Gateway to World-Class Education",
   description: "Vision Edge is a premier educational consultancy helping students achieve their dreams of studying abroad. Free consultations, university admissions, visa guidance, and full pre-travel support.",
   keywords: ["study abroad", "scholarship", "university admission", "educational consultancy", "international education"],
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+    shortcut: '/logo.png',
+  },
 }
 
 export default function RootLayout({

@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <Logo size={40} textClassName="text-xl" />
+              <Logo size={112} />
             </div>
             <p className="text-slate-300 text-sm mb-4">
               {t.about.description}

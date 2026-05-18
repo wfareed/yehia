@@ -110,7 +110,7 @@ export default function AboutPage() {
               <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-8 flex items-center justify-center min-h-[300px] border border-slate-600">
                 <div className="text-center">
                   <div className="flex justify-center mb-4">
-                    <Logo size={72} showText={false} />
+                    <Logo size={240} />
                   </div>
                   <h3 className="text-2xl font-bold text-white">Vision Edge</h3>
                   <p className="text-emerald-400 mt-2">{ar ? 'جسرك نحو التعليم العالمي' : 'Your Gateway to World-Class Education'}</p>
