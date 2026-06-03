@@ -132,7 +132,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.address}</h4>
-                        <p className="text-slate-300 text-sm">Riyadh, Saudi Arabia<br />King Fahd Road, Office 301</p>
+                        <p className="text-slate-300 text-sm">53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed</p>
                       </div>
                     </div>
 
@@ -142,7 +142,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.phoneLabel}</h4>
-                        <p className="text-slate-300 text-sm">+966 XX XXX XXXX</p>
+                        <p className="text-slate-300 text-sm">+201092020733</p>
                       </div>
                     </div>
 
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.emailLabel}</h4>
-                        <p className="text-slate-300 text-sm">info@visionedge.com</p>
+                        <p className="text-slate-300 text-sm">info@visionedge-eg.com</p>
                       </div>
                     </div>
 
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     className="border-green-400 text-green-400 hover:bg-green-400 hover:text-green-900 w-full"
                     asChild
                   >
-                    <a href="https://wa.me/966XXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/201092020733" target="_blank" rel="noopener noreferrer">
                       Start Chat
                     </a>
                   </Button>
@@ -219,7 +219,7 @@ export default function ContactPage() {
             <div className="text-center">
               <MapPin className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
               <h3 className="text-white text-xl font-semibold mb-2">Our Location</h3>
-              <p className="text-slate-300">Riyadh, Saudi Arabia</p>
+              <p className="text-slate-300">53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed</p>
               <p className="text-slate-400 text-sm mt-4">
                 (Google Maps integration placeholder — add your API key)
               </p>

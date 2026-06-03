@@ -121,16 +121,16 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <span className="text-slate-300 text-sm">
-                  Riyadh, Saudi Arabia
+                  53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">+966 XX XXX XXXX</span>
+                <span className="text-slate-300 text-sm">+201092020733</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">info@visionedge.com</span>
+                <span className="text-slate-300 text-sm">info@visionedge-eg.com</span>
               </li>
             </ul>
           </div>

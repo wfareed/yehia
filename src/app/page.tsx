@@ -147,8 +147,8 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <Button variant="gradient" size="lg" className="text-lg" asChild>
-                <Link href="/services">
-                  {t.hero.discoverServices}
+                <Link href="/discover-egypt">
+                  {t.hero.egyptsCamp}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

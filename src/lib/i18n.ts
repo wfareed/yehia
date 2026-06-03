@@ -22,13 +22,14 @@ export const translations = {
       title: "Your Compass for Studying Abroad",
       subtitle: "We provide consultations, admissions, and pre-travel preparations, facilitating all procedures until arrival and the start of studies.",
       discoverServices: "Discover Our Services",
+      egyptsCamp: "Egypt's Camp",
       freeConsultation: "Free Consultation",
       downloadVideo: "Download this video",
     },
     // About
     about: {
       whoWeAre: "Who We Are",
-      description: "Vision Edge is a Saudi agency offering free services for studying abroad. We provide comprehensive educational consultations to help students achieve their dreams of international education.",
+      description: "An educational agency specializing in organizing summer and winter camps at accredited Egyptian universities, offering comprehensive services for studying abroad and providing thorough educational consultations to help students achieve their dreams of international education.",
       whyChooseUs: "Why Choose Us?",
       points: [
         "Free educational consultations",
@@ -118,13 +119,14 @@ export const translations = {
       title: "جسرك نحو التعليم العالمي",
       subtitle: "نقدم الاستشارات والقبول والتحضيرات قبل السفر، نسهّل جميع الإجراءات حتى الوصول وبدء الدراسة.",
       discoverServices: "اكتشف خدماتنا",
+      egyptsCamp: "معسكر مصر",
       freeConsultation: "استشارة مجانية",
       downloadVideo: "تحميل الفيديو",
     },
     // About
     about: {
       whoWeAre: "من نحن",
-      description: "Vision Edge وكالة تعليمية متخصصة تقدم خدمات متكاملة للدراسة في الخارج. نقدم استشارات تعليمية شاملة لمساعدة الطلاب على تحقيق أحلامهم في التعليم الدولي.",
+      description: "وكالة تعليمية متخصصة في تنظيم المعسكرات الصيفية والشتوية في الجامعات المصرية المعتمدة، تقدم خدمات متكاملة للدراسة في الخارج واستشارات تعليمية شاملة لمساعدة الطلاب على تحقيق أحلامهم في التعليم الدولي.",
       whyChooseUs: "لماذا Vision Edge؟",
       points: [
         "استشارات تعليمية مجانية",
