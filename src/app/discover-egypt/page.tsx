@@ -33,6 +33,11 @@ export default function DiscoverEgyptPage() {
       description: ar ? 'اكتشف الرحلات والمعسكرات والأنشطة الترفيهية في أشهر وجهات مصر.' : 'Discover trips, camps, and recreational activities across Egypt’s most famous destinations.',
       href: '/brochures/egypt-adventure-camps-brochure.pdf',
     },
+    {
+      title: ar ? 'دليل الدورات الاحترافية' : 'Professional Courses Brochure',
+      description: ar ? 'تعرف على الدورات التدريبية الاحترافية والشهادات المعتمدة لتطوير المهارات.' : 'Explore professional training courses and accredited certifications to develop your skills.',
+      href: '/brochures/professional-courses-brochure.pdf',
+    },
   ]
 
   const tourismHighlights = [
@@ -137,7 +142,7 @@ export default function DiscoverEgyptPage() {
               {ar ? 'حمّل البروشورات لمعرفة تفاصيل البرامج والرحلات والمعسكرات.' : 'Download the brochures to learn more about programs, tours, and camps.'}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {brochures.map((brochure) => (
               <Card key={brochure.href} className="bg-slate-900 border-slate-700 hover:border-emerald-500 transition-all">
                 <CardHeader>
