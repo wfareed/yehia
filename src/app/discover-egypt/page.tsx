@@ -88,7 +88,7 @@ export default function DiscoverEgyptPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-amber-400 text-sm uppercase tracking-widest mb-4">{ar ? 'اكتشف مصر' : 'DISCOVER EGYPT'}</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {ar ? 'رحلة تعليمية وثقافية لا تُنسى' : 'An Unforgettable Educational & Cultural Journey'}
+              {ar ? 'معسكرات تعليمية ومغامرات عالمية' : 'GLOBAL EDUCATIONAL & ADVENTURE CAMPS'}
             </h1>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               {ar
