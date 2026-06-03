@@ -101,22 +101,32 @@ export default function Home() {
     <div className="dark">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900" />
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-transparent" />
         
-        <div className="relative container mx-auto px-4 text-center z-10 pt-20">
+        <div className="relative container mx-auto px-4 z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="max-w-2xl text-left rtl:text-right"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               {t.hero.title}
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-slate-200 mb-8 max-w-xl drop-shadow-md">
               {t.hero.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <Button variant="gradient" size="lg" className="text-lg" asChild>
                 <Link href="/services">
                   {t.hero.discoverServices}
