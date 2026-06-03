@@ -113,9 +113,9 @@ export default function DiscoverEgyptPage() {
             </p>
           </motion.div>
         </div>
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="px-4 sm:px-8 flex justify-center">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex justify-center overflow-hidden">
           <video
-            className="aspect-video w-auto max-w-full max-h-[70vh] rounded-2xl border border-slate-700 bg-slate-950 object-contain"
+            className="aspect-video w-[63vw] max-w-none rounded-2xl border border-slate-700 bg-slate-950 object-contain"
             controls
             loop
             playsInline
