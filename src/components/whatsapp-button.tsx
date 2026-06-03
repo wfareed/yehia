@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
       <div className="relative">
         <span className="absolute inset-0 rounded-full bg-green-500 opacity-40 animate-ping" />
         <a
-          href="https://wa.me/966XXXXXXXXX"
+          href="https://wa.me/201092020733"
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setHovered(true)}

@@ -45,11 +45,11 @@ export default function AboutPage() {
   ]
 
   const timeline = [
-    { year: "2018", title: ar ? "التأسيس" : "Founded", description: ar ? "تأسست Vision Edge في الرياض، المملكة العربية السعودية." : "Vision Edge was established in Riyadh, Saudi Arabia." },
+    { year: "2018", title: ar ? "التأسيس" : "Founded", description: ar ? "تأسست Vision Edge في القاهرة، مصر." : "Vision Edge was established in Cairo, Egypt." },
     { year: "2019", title: ar ? "أول 100 طالب" : "First 100 Students", description: ar ? "نجحنا في إلحاق أول 100 طالب بجامعات دولية." : "Successfully placed our first 100 students in international universities." },
     { year: "2020", title: ar ? "التوسع العالمي" : "Global Expansion", description: ar ? "توسعنا في شراكات تشمل أكثر من 10 دول عبر 5 قارات." : "Expanded partnerships to 10+ countries across 5 continents." },
     { year: "2021", title: ar ? "التحول الرقمي" : "Digital Transformation", description: ar ? "أطلقنا منصتنا الرقمية لتسهيل طلبات الطلاب." : "Launched our digital platform for seamless student applications." },
-    { year: "2022", title: ar ? "أكثر من 1000 طالب" : "1000+ Students", description: ar ? "بلغنا معلم إلحاق أكثر من 1000 طالب حول العالم." : "Reached milestone of placing 1000+ students worldwide." },
+    { year: "2022", title: ar ? "أكثر من 1000 طالب" : "1000+ Students", description: ar ? "لقد حققنا إنجازاً هاماً بتوظيف أكثر من 1000 طالب حول العالم." : "Reached milestone of placing 1000+ students worldwide." },
     { year: "2023", title: ar ? "جائزة التميز" : "Award-Winning", description: ar ? "حصلنا على لقب أفضل وكالة تعليمية في العالم العربي." : "Recognized as a top educational consultancy in the Arab world." },
     { year: "2024", title: ar ? "أكثر من 5000 طالب" : "5000+ Students", description: ar ? "أكثر من 5000 طالب تم إلحاقهم بنجاح في أكثر من 50 جامعة شريكة." : "Over 5000 students successfully placed in 50+ partner universities." },
   ]
