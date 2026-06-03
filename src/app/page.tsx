@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useLanguage } from '@/contexts/language-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -11,6 +11,23 @@ import FAQ from '@/components/faq'
 
 export default function Home() {
   const { t, dir } = useLanguage()
+  const heroVideoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = heroVideoRef.current
+    if (!video) return
+    video.muted = true
+    video.defaultMuted = true
+    const tryPlay = () => {
+      const playPromise = video.play()
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {})
+      }
+    }
+    tryPlay()
+    video.addEventListener('loadeddata', tryPlay)
+    return () => video.removeEventListener('loadeddata', tryPlay)
+  }, [])
 
   const services = [
     {
@@ -100,18 +117,20 @@ export default function Home() {
   return (
     <div className="dark">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900">
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900">
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          ref={heroVideoRef}
+          className="absolute inset-0 h-full w-full object-cover brightness-125"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          poster="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920"
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/25 to-transparent" />
         
         <div className="relative container mx-auto px-4 z-10 pt-20">
           <motion.div
