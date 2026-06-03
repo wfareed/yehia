@@ -19,16 +19,65 @@ const itemVariants = {
 }
 
 export default function BlogPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
-  const posts = [
+  const posts = language === 'ar' ? [
+    {
+      title: "أفضل 10 منح للطلاب الدوليين في 2024",
+      excerpt: "اكتشف أكثر المنح الممولة بالكامل للطلاب الذين يرغبون في الدراسة في الخارج هذا العام.",
+      date: "15 ديسمبر 2024",
+      readTime: "5 دقائق قراءة",
+      category: "منح",
+      image: "🎓",
+    },
+    {
+      title: "كيفية كتابة بيان الغرض الفائز",
+      excerpt: "نصائح خبراء في صياغة بيان شخصي مقنع سيساعدك على التميز في طلبات الجامعة.",
+      date: "10 ديسمبر 2024",
+      readTime: "7 دقائق قراءة",
+      category: "القبول",
+      image: "✍️",
+    },
+    {
+      title: "حياة الطالب في المملكة المتحدة: ماذا تتوقع",
+      excerpt: "دليل شامل للعيش والدراسة في المملكة المتحدة كطالب دولي.",
+      date: "5 ديسمبر 2024",
+      readTime: "6 دقائق قراءة",
+      category: "حياة الطالب",
+      image: "🇬🇧",
+    },
+    {
+      title: "IELTS مقابل TOEFL: أي اختبار يجب أن تأخذه؟",
+      excerpt: "مقارنة بين اختباري إتقان اللغة الإنجليزية الأكثر شعبية ومساعدتك في تحديد أيهما مناسب لك.",
+      date: "28 نوفمبر 2024",
+      readTime: "8 دقائق قراءة",
+      category: "التحضير للاختبار",
+      image: "📝",
+    },
+    {
+      title: "دليل شامل لطلبات تأشيرة الطالب",
+      excerpt: "دليل خطوة بخطوة للتنقل في عملية طلب التأشيرة لأشهر وجهات الدراسة.",
+      date: "20 نوفمبر 2024",
+      readTime: "10 دقائق قراءة",
+      category: "التأشيرة",
+      image: "🛂",
+    },
+    {
+      title: "نصائح الميزانية للطلاب الدوليين",
+      excerpt: "نصائح عملية لإدارة أموالك أثناء الدراسة في الخارج، من السكن إلى النفقات اليومية.",
+      date: "15 نوفمبر 2024",
+      readTime: "6 دقائق قراءة",
+      category: "المالية",
+      image: "💰",
+    },
+  ] : [
     {
       title: "Top 10 Scholarships for International Students in 2024",
       excerpt: "Discover the most prestigious fully-funded scholarships available for students looking to study abroad this year.",
       date: "Dec 15, 2024",
       readTime: "5 min read",
       category: "Scholarships",
-      image: "ًں“ڑ",
+      image: "🎓",
     },
     {
       title: "How to Write a Winning Statement of Purpose",
@@ -36,7 +85,7 @@ export default function BlogPage() {
       date: "Dec 10, 2024",
       readTime: "7 min read",
       category: "Admissions",
-      image: "âœچï¸ڈ",
+      image: "✍️",
     },
     {
       title: "Student Life in the UK: What to Expect",
@@ -44,7 +93,7 @@ export default function BlogPage() {
       date: "Dec 5, 2024",
       readTime: "6 min read",
       category: "Student Life",
-      image: "ًں‡¬ًں‡§",
+      image: "🇬🇧",
     },
     {
       title: "IELTS vs TOEFL: Which Test Should You Take?",
@@ -52,7 +101,7 @@ export default function BlogPage() {
       date: "Nov 28, 2024",
       readTime: "8 min read",
       category: "Test Prep",
-      image: "ًں“‌",
+      image: "📝",
     },
     {
       title: "Complete Guide to Student Visa Applications",
@@ -60,7 +109,7 @@ export default function BlogPage() {
       date: "Nov 20, 2024",
       readTime: "10 min read",
       category: "Visa",
-      image: "ًں›‚",
+      image: "🛂",
     },
     {
       title: "Budgeting Tips for International Students",
@@ -68,7 +117,7 @@ export default function BlogPage() {
       date: "Nov 15, 2024",
       readTime: "6 min read",
       category: "Finance",
-      image: "ًں’°",
+      image: "💰",
     },
   ]
 
@@ -79,9 +128,9 @@ export default function BlogPage() {
         <div className="relative container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-emerald-400 text-sm uppercase tracking-widest mb-4">BLOG</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">News & Articles</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{language === 'ar' ? 'الأخبار والمقالات' : 'News & Articles'}</h1>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Latest insights, tips, and guides for students planning to study abroad.
+              {language === 'ar' ? 'أحدث الرؤى والنصائح والأدلة للطلاب الذين يخططون للدراسة في الخارج.' : 'Latest insights, tips, and guides for students planning to study abroad.'}
             </p>
           </motion.div>
         </div>
@@ -113,7 +162,7 @@ export default function BlogPage() {
                           <Calendar className="h-3 w-3" />
                           <span>{post.date}</span>
                         </div>
-                        <span className="text-emerald-400 text-sm group-hover:underline">{t.common.readMore} â†’</span>
+                        <span className="text-emerald-400 text-sm group-hover:underline">{t.common.readMore} →</span>
                       </div>
                     </div>
                   </CardContent>
@@ -128,18 +177,18 @@ export default function BlogPage() {
       <section className="py-16 bg-gradient-to-r from-emerald-900 to-teal-900">
         <div className="container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">{language === 'ar' ? 'اشترك في نشرتنا الإخبارية' : 'Subscribe to Our Newsletter'}</h2>
             <p className="text-emerald-200 mb-8 max-w-xl mx-auto">
-              Get the latest study abroad news, scholarship updates, and expert tips delivered to your inbox.
+              {language === 'ar' ? 'احصل على أحدث أخبار الدراسة في الخارج وتحديثات المنح ونصائح الخبراء في بريدك الوارد.' : 'Get the latest study abroad news, scholarship updates, and expert tips delivered to your inbox.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={language === 'ar' ? 'أدخل بريدك الإلكتروني' : 'Enter your email'}
                 className="flex-1 px-4 py-3 rounded-md bg-white/10 border border-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-emerald-400"
               />
               <Button variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-900">
-                Subscribe
+                {language === 'ar' ? 'اشترك' : 'Subscribe'}
               </Button>
             </div>
           </motion.div>
