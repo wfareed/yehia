@@ -55,12 +55,12 @@ export default function AboutPage() {
   ]
 
   const team = [
-    { name: ar ? "د. أحمد الفهد" : "Dr. Ahmed Al-Fahad", role: ar ? "المؤسس والرئيس التنفيذي" : "Founder & CEO", initials: "AA" },
-    { name: ar ? "سارة المطيري" : "Sara Al-Mutairi", role: ar ? "رئيسة القبول" : "Head of Admissions", initials: "SA" },
-    { name: ar ? "خالد الراشد" : "Khalid Al-Rashid", role: ar ? "متخصص التأشيرات" : "Visa Specialist", initials: "KR" },
-    { name: ar ? "نورة الدوسري" : "Nora Al-Dosari", role: ar ? "مستشارة الطلاب" : "Student Counselor", initials: "ND" },
-    { name: ar ? "عمر الشيخ" : "Omar Al-Sheikh", role: ar ? "مدير الشراكات" : "Partnerships Director", initials: "OS" },
-    { name: ar ? "فاطمة الحربي" : "Fatima Al-Harbi", role: ar ? "مديرة العمليات" : "Operations Manager", initials: "FH" },
+    { name: "", role: ar ? "المؤسس والرئيس التنفيذي" : "Founder & CEO", initials: "AA" },
+    { name: "", role: ar ? "رئيسة القبول" : "Head of Admissions", initials: "SA" },
+    { name: "", role: ar ? "متخصص التأشيرات" : "Visa Specialist", initials: "KR" },
+    { name: "", role: ar ? "مستشارة الطلاب" : "Student Counselor", initials: "ND" },
+    { name: "", role: ar ? "مدير الشراكات" : "Partnerships Director", initials: "OS" },
+    { name: "", role: ar ? "مديرة العمليات" : "Operations Manager", initials: "FH" },
   ]
 
   const stats = [
