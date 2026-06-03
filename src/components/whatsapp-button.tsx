@@ -1,25 +1,25 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
+import { useLanguage } from '@/contexts/language-context'
 
 export default function WhatsAppButton() {
-  const [hovered, setHovered] = useState(false)
+  const { language } = useLanguage()
+
+  const tooltipText = language === 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp'
+  const isRTL = language === 'ar'
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-      {hovered && (
-        <div className="bg-slate-800 text-white text-sm px-3 py-2 rounded-lg shadow-lg border border-slate-600 whitespace-nowrap animate-fade-in">
-          Chat with us on WhatsApp
-        </div>
-      )}
-      <div className="relative">
+    <div className={`fixed bottom-6 z-50 flex items-center gap-3 group ${isRTL ? 'left-6' : 'right-6'}`}>
+      <div className="bg-slate-800 text-white text-sm px-3 py-2 rounded-lg shadow-lg border border-slate-600 whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 order-1">
+        {tooltipText}
+      </div>
+      <div className="relative order-2">
         <span className="absolute inset-0 rounded-full bg-green-500 opacity-40 animate-ping" />
         <a
           href="https://wa.me/201092020733"
           target="_blank"
           rel="noopener noreferrer"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
           className="relative flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           aria-label="Contact us on WhatsApp"
         >
