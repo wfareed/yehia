@@ -401,10 +401,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Ready to Start Your Journey?
+              {t.cta.title}
             </h2>
             <p className="text-slate-200 text-lg mb-8 max-w-2xl mx-auto">
-              Get free consultation and take the first step towards your international education dream.
+              {t.cta.description}
             </p>
             <Button variant="outline" size="lg" className="text-lg border-white text-white hover:bg-white hover:text-emerald-900" asChild>
               <Link href="/contact">
