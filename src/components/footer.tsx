@@ -8,9 +8,13 @@ import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
 
 export default function Footer() {
-  const { t, dir } = useLanguage()
+  const { t, dir, language } = useLanguage()
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+
+  const address = language === 'ar' 
+    ? '53 شارع الفيروز - المجاورة العاشرة - الحي الأول - الشيخ زايد'
+    : '53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed'
 
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault()
@@ -118,17 +122,17 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t.contact.office}</h3>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
+              <li className={`flex items-start ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
                 <MapPin className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <span className="text-slate-300 text-sm">
-                  53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed
+                  {address}
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
+              <li className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
                 <Phone className="h-5 w-5 text-emerald-400 flex-shrink-0" />
                 <span className="text-slate-300 text-sm">+201092020733</span>
               </li>
-              <li className="flex items-center space-x-3">
+              <li className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
                 <Mail className="h-5 w-5 text-emerald-400 flex-shrink-0" />
                 <span className="text-slate-300 text-sm">info@visionedge-eg.com</span>
               </li>
