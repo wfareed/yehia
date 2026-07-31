@@ -72,6 +72,57 @@ export const navSeed: NavContent = {
   ],
 }
 
+export interface BlogParagraphBlock {
+  id: string
+  type: "paragraph"
+  text_en: string
+  text_ar: string
+}
+
+export interface BlogImageBlock {
+  id: string
+  type: "image"
+  url: string
+  caption_en: string
+  caption_ar: string
+}
+
+export interface BlogVideoBlock {
+  id: string
+  type: "video"
+  url: string
+  caption_en: string
+  caption_ar: string
+}
+
+export type BlogContentBlock = BlogParagraphBlock | BlogImageBlock | BlogVideoBlock
+
+export interface BlogPost {
+  id: string
+  slug: string
+  emoji: string
+  coverImage: string
+  category_en: string
+  category_ar: string
+  title_en: string
+  title_ar: string
+  excerpt_en: string
+  excerpt_ar: string
+  blocks: BlogContentBlock[]
+  date: string
+  read_time_en: string
+  read_time_ar: string
+  published: boolean
+}
+
+export interface BlogContent {
+  posts: BlogPost[]
+}
+
+export const blogSeed: BlogContent = {
+  posts: [],
+}
+
 export interface ContactSocialLinks {
   facebook: string
   twitter: string

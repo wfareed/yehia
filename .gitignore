@@ -30,6 +30,10 @@ yarn-error.log*
 # admin panel content storage (persists on the server, not tracked in git)
 /data/*.json
 
+# admin-uploaded media (images/videos), persists on the server, not tracked in git
+/public/uploads/*
+!/public/uploads/.gitkeep
+
 # vercel
 .vercel
 
