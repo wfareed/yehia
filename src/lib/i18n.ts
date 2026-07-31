@@ -104,22 +104,6 @@ export const translations = {
           answer: "Yes! We provide completely free educational consultations. Our service is free for students from the initial consultation through to acceptance and enrollment.",
         },
         {
-          question: "Which countries do you help students study in?",
-          answer: "We help students study in the USA, UK, Australia, Canada, Germany, Ireland, Malaysia, UAE, South Africa, and more. We have partnerships with universities in over 15 countries.",
-        },
-        {
-          question: "How long does the application process take?",
-          answer: "The timeline varies by country and university, but typically the process takes 2-4 months from initial consultation to receiving an offer letter. Visa processing adds an additional 2-6 weeks.",
-        },
-        {
-          question: "Do you help with visa applications?",
-          answer: "Yes, we provide comprehensive visa guidance including document preparation, application form filling, and interview coaching. Our success rate for visa approvals is over 95%.",
-        },
-        {
-          question: "Can you help me find scholarships?",
-          answer: "Absolutely! We assess your profile and match you with suitable scholarship opportunities. We've helped hundreds of students secure partial and full scholarships.",
-        },
-        {
           question: "What support do you provide after arrival?",
           answer: "We arrange airport pickup, help with accommodation, assist with bank account setup, and provide ongoing support throughout your study period. We're available 24/7 for our students.",
         },
@@ -234,22 +218,6 @@ export const translations = {
         {
           question: "هل الاستشارة مجانية حقاً؟",
           answer: "نعم! نقدم استشارات تعليمية مجانية تماماً. خدمتنا مجانية للطلاب من الاستشارة الأولية وحتى القبول والتسجيل.",
-        },
-        {
-          question: "في أي دول تساعدون الطلاب على الدراسة؟",
-          answer: "نساعد الطلاب على الدراسة في الولايات المتحدة والمملكة المتحدة وأستراليا وكندا وألمانيا وأيرلندا وماليزيا والإمارات وجنوب أفريقيا والمزيد. لدينا شراكات مع جامعات في أكثر من 15 دولة.",
-        },
-        {
-          question: "كم تستغرق عملية التقديم؟",
-          answer: "يختلف الجدول الزمني حسب الدولة والجامعة، ولكن عادة ما تستغرق العملية 2-4 أشهر من الاستشارة الأولية إلى استلام خطاب القبول. تضيف معالجة التأشيرة 2-6 أسابيع إضافية.",
-        },
-        {
-          question: "هل تساعدون في طلبات التأشيرة؟",
-          answer: "نعم، نقدم توجيهاً شاملاً للتأشيرة بما في ذلك تحضير المستندات وتعبئة نماذج الطلب والتدريب على المقابلة. معدل نجاحنا في الموافقات على التأشيرات يزيد عن 95%.",
-        },
-        {
-          question: "هل يمكنكم مساعدتي في العثور على منح؟",
-          answer: "بالتأكيد! نقوم بتقييم ملفك ومطابقته مع فرص المنح المناسبة. لقد ساعدنا مئات الطلاب على الحصول على منح جزئية وكاملة.",
         },
         {
           question: "ما الدعم الذي تقدمونه بعد الوصول؟",

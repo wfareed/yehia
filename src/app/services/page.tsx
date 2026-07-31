@@ -61,10 +61,8 @@ export default function ServicesPage() {
   const process = [
     { step: 1, title: ar ? "استشارة مجانية" : "Free Consultation", description: ar ? "احجز جلسة مجانية لمناقشة أهدافك في الدراسة بالخارج." : "Book a free session to discuss your study abroad goals." },
     { step: 2, title: ar ? "تقييم الملف" : "Profile Assessment", description: ar ? "نقيّم ملفك الأكاديمي وتفضيلاتك." : "We evaluate your academic profile and preferences." },
-    { step: 3, title: ar ? "اختيار الجامعة" : "University Selection", description: ar ? "نوصي بأفضل الجامعات والبرامج المناسبة لك." : "We recommend the best universities and programs for you." },
-    { step: 4, title: ar ? "التقديم والقبول" : "Application & Admission", description: ar ? "نتولى عملية التقديم بالكامل نيابةً عنك." : "We handle the entire application process." },
-    { step: 5, title: ar ? "معالجة التأشيرة" : "Visa Processing", description: ar ? "نرشدك خطوة بخطوة في تقديم طلب التأشيرة." : "We guide you through the visa application." },
-    { step: 6, title: ar ? "الدعم قبل المغادرة" : "Pre-Departure Support", description: ar ? "التوجيه وترتيبات السكن والسفر." : "Orientation, accommodation, and travel arrangements." },
+    { step: 3, title: ar ? "التقديم والقبول" : "Application & Admission", description: ar ? "نتولى عملية التقديم بالكامل نيابةً عنك." : "We handle the entire application process." },
+    { step: 4, title: ar ? "الدعم قبل المغادرة" : "Pre-Departure Support", description: ar ? "التوجيه وترتيبات السكن والسفر." : "Orientation, accommodation, and travel arrangements." },
   ]
 
   return (

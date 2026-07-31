@@ -87,16 +87,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  University Admissions
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  Visa Assistance
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-slate-300 hover:text-white transition-colors text-sm">
                   Scholarship Guidance
                 </Link>
               </li>
