@@ -55,8 +55,8 @@ export default function AboutPage() {
   ]
 
   const team = [
-    { name: "", role: ar ? "المؤسس والرئيس التنفيذي" : "Founder & CEO", initials: "AA" },
-    { name: "", role: ar ? "رئيسة القبول" : "Head of Admissions", initials: "SA" },
+    { name: "Mr. Mohammed Sabbahi", role: ar ? "المؤسس والرئيس التنفيذي" : "Founder & CEO", initials: "MS" },
+    { name: "Mr. Yehia El-Samman", role: ar ? "رئيس العمليات والمؤسس المشارك" : "Head of Operations & Co-Founder", initials: "YS" },
     { name: "", role: ar ? "متخصص التأشيرات" : "Visa Specialist", initials: "KR" },
     { name: "", role: ar ? "مستشارة الطلاب" : "Student Counselor", initials: "ND" },
     { name: "", role: ar ? "مدير الشراكات" : "Partnerships Director", initials: "OS" },

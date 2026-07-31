@@ -37,7 +37,6 @@ export default function Header() {
     { href: '/about', label: t.nav.about },
     { href: '/services', label: t.nav.services },
     { href: '/countries', label: t.nav.countries },
-    { href: '/universities', label: t.nav.universities },
     { href: '/discover-egypt', label: t.nav.discoverEgypt },
     { href: '/testimonials', label: t.nav.testimonials },
     { href: '/blog', label: t.nav.blog },

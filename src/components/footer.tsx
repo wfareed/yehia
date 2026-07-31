@@ -74,11 +74,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/universities" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  {t.nav.universities}
-                </Link>
-              </li>
-              <li>
                 <Link href="/scholarships" className="text-slate-300 hover:text-white transition-colors text-sm">
                   {t.nav.scholarships}
                 </Link>

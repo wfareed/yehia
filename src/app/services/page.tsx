@@ -7,8 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import {
-  GraduationCap, Plane, FileText, Home, BookOpen, Headphones,
-  Globe, MapPin, ArrowRight, CheckCircle, Clock
+  GraduationCap, Home, BookOpen, Headphones,
+  MapPin, ArrowRight, CheckCircle, Clock
 } from 'lucide-react'
 
 const containerVariants = {
@@ -31,24 +31,6 @@ export default function ServicesPage() {
       title: ar ? "استشارات الدراسة في الخارج" : "Study Abroad Consultation",
       description: ar ? "استشارة شخصية لمساعدتك في اختيار الدولة والجامعة والبرنامج المناسب بناءً على خلفيتك الأكاديمية وأهدافك المهنية." : "Personalized consultation to help you choose the right country, university, and program based on your academic background and career goals.",
       features: ar ? ["تقييم الملف الأكاديمي", "مطابقة الدولة والجامعة", "توجيه اختيار البرنامج", "تحديد المسار المهني"] : ["Academic profile assessment", "Country & university matching", "Program selection guidance", "Career path alignment"],
-    },
-    {
-      icon: <FileText className="h-8 w-8 text-blue-400" />,
-      title: ar ? "القبول الجامعي" : "University Admissions",
-      description: ar ? "مساعدة كاملة في عملية التقديم للجامعة، من إعداد المستندات إلى التقديم والمتابعة." : "Complete assistance with the university application process, from document preparation to submission and follow-up.",
-      features: ar ? ["تعبئة نماذج الطلبات", "التحقق من المستندات", "مراجعة رسالة الغرض", "التحضير للمقابلة"] : ["Application form filling", "Document verification", "Statement of purpose review", "Interview preparation"],
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-green-400" />,
-      title: ar ? "المساعدة في المنح" : "Scholarship Assistance",
-      description: ar ? "المساعدة في تحديد المنح الدراسية والتقديم عليها، وتعظيم فرص الحصول على الدعم المالي." : "Help identifying and applying for scholarships that match your profile, maximizing your chances of financial support.",
-      features: ar ? ["مطابقة المنح الدراسية", "إعداد طلب المنحة", "دعم كتابة المقال", "التخطيط المالي"] : ["Scholarship matching", "Application preparation", "Essay writing support", "Financial planning"],
-    },
-    {
-      icon: <Plane className="h-8 w-8 text-orange-400" />,
-      title: ar ? "إرشاد التأشيرات" : "Visa Guidance",
-      description: ar ? "إرشاد متخصص خلال عملية تقديم طلب التأشيرة، وضمان إعداد جميع المستندات وتقديمها بشكل صحيح." : "Expert guidance through the visa application process, ensuring all documents are properly prepared and submitted.",
-      features: ar ? ["تحديد نوع التأشيرة", "قائمة المستندات المطلوبة", "تقديم الطلب", "التدريب على المقابلة"] : ["Visa type identification", "Document checklist", "Application submission", "Interview coaching"],
     },
     {
       icon: <BookOpen className="h-8 w-8 text-pink-400" />,
