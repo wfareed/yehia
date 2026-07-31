@@ -27,6 +27,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# admin panel content storage (persists on the server, not tracked in git)
+/data/*.json
+
 # vercel
 .vercel
 

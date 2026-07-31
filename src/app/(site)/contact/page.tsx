@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLanguage } from '@/contexts/language-context'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -8,21 +8,50 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { contactSeed, ContactContent } from '@/lib/content-types'
 
 export default function ContactPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const ar = language === 'ar'
+  const [contact, setContact] = useState<ContactContent>(contactSeed)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: '',
   })
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    fetch('/api/content/contact')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => data && setContact(data))
+      .catch(() => {})
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you! We will get back to you soon.')
-    setFormData({ name: '', email: '', phone: '', message: '' })
+    setStatus('sending')
+    setErrorMessage('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setStatus('error')
+        setErrorMessage(data.error || 'Something went wrong. Please try again.')
+        return
+      }
+      setStatus('sent')
+      setFormData({ name: '', email: '', phone: '', message: '' })
+    } catch {
+      setStatus('error')
+      setErrorMessage('Something went wrong. Please try again.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -107,8 +136,14 @@ export default function ContactPage() {
                         className="bg-slate-900 border-slate-600 text-white"
                       />
                     </div>
-                    <Button type="submit" variant="gradient" size="lg" className="w-full">
-                      {t.contact.send}
+                    {status === 'sent' && (
+                      <p className="text-emerald-400 text-sm">
+                        {ar ? 'شكراً لك! سنتواصل معك قريباً.' : 'Thank you! We will get back to you soon.'}
+                      </p>
+                    )}
+                    {status === 'error' && <p className="text-red-400 text-sm">{errorMessage}</p>}
+                    <Button type="submit" variant="gradient" size="lg" className="w-full" disabled={status === 'sending'}>
+                      {status === 'sending' ? (ar ? 'جاري الإرسال...' : 'Sending...') : t.contact.send}
                     </Button>
                   </form>
                 </CardContent>
@@ -132,7 +167,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.address}</h4>
-                        <p className="text-slate-300 text-sm">53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed</p>
+                        <p className="text-slate-300 text-sm">{ar ? contact.address_ar : contact.address_en}</p>
                       </div>
                     </div>
 
@@ -142,7 +177,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.phoneLabel}</h4>
-                        <p className="text-slate-300 text-sm">+201092020733</p>
+                        <p className="text-slate-300 text-sm">{contact.phone}</p>
                       </div>
                     </div>
 
@@ -152,7 +187,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{t.contact.emailLabel}</h4>
-                        <p className="text-slate-300 text-sm">info@visionedge-eg.com</p>
+                        <p className="text-slate-300 text-sm">{contact.email}</p>
                       </div>
                     </div>
 
@@ -161,8 +196,8 @@ export default function ContactPage() {
                         <Clock className="h-5 w-5 text-emerald-400" />
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold">Working Hours</h4>
-                        <p className="text-slate-300 text-sm">Sun - Thu: 9:00 AM - 6:00 PM</p>
+                        <h4 className="text-white font-semibold">{ar ? 'ساعات العمل' : 'Working Hours'}</h4>
+                        <p className="text-slate-300 text-sm">{ar ? contact.working_hours_ar : contact.working_hours_en}</p>
                       </div>
                     </div>
                   </div>
@@ -180,7 +215,7 @@ export default function ContactPage() {
                     className="border-green-400 text-green-400 hover:bg-green-400 hover:text-green-900 w-full"
                     asChild
                   >
-                    <a href="https://wa.me/201092020733" target="_blank" rel="noopener noreferrer">
+                    <a href={`https://wa.me/${contact.whatsapp_number}`} target="_blank" rel="noopener noreferrer">
                       Start Chat
                     </a>
                   </Button>
@@ -192,16 +227,16 @@ export default function ContactPage() {
                 <CardContent className="pt-6">
                   <h4 className="text-white font-semibold mb-4">Follow Us</h4>
                   <div className="flex space-x-4">
-                    <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
+                    <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
                       <Facebook className="h-5 w-5 text-slate-300" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
+                    <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
                       <Twitter className="h-5 w-5 text-slate-300" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
+                    <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
                       <Instagram className="h-5 w-5 text-slate-300" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
+                    <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
                       <Linkedin className="h-5 w-5 text-slate-300" />
                     </a>
                   </div>
@@ -218,8 +253,8 @@ export default function ContactPage() {
           <div className="bg-slate-900 rounded-2xl overflow-hidden h-96 flex items-center justify-center border border-slate-700">
             <div className="text-center">
               <MapPin className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
-              <h3 className="text-white text-xl font-semibold mb-2">Our Location</h3>
-              <p className="text-slate-300">53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed</p>
+              <h3 className="text-white text-xl font-semibold mb-2">{ar ? 'موقعنا' : 'Our Location'}</h3>
+              <p className="text-slate-300">{ar ? contact.address_ar : contact.address_en}</p>
               <p className="text-slate-400 text-sm mt-4">
                 (Google Maps integration placeholder — add your API key)
               </p>

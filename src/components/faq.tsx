@@ -1,14 +1,25 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useLanguage } from '@/contexts/language-context'
+import { faqSeed, FaqItem } from '@/lib/content-types'
 
 export default function FAQ() {
   const { t, language } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [items, setItems] = useState<FaqItem[]>(faqSeed.items)
   const isRTL = language === 'ar'
+
+  useEffect(() => {
+    fetch('/api/content/faq')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.items) setItems(data.items)
+      })
+      .catch(() => {})
+  }, [])
 
   return (
     <section className="py-20 bg-slate-900">
@@ -19,16 +30,18 @@ export default function FAQ() {
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
-          {t.faq.items.map((faq, index) => (
+          {items.map((faq, index) => (
             <div
-              key={index}
+              key={faq.id}
               className="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden"
             >
               <button
                 className="w-full px-6 py-4 flex items-center justify-between text-left"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className={`text-white font-medium ${isRTL ? 'pl-4' : 'pr-4'}`}>{faq.question}</span>
+                <span className={`text-white font-medium ${isRTL ? 'pl-4' : 'pr-4'}`}>
+                  {isRTL ? faq.question_ar : faq.question_en}
+                </span>
                 <ChevronDown
                   className={`h-5 w-5 text-emerald-400 transition-transform flex-shrink-0 ${
                     openIndex === index ? 'rotate-180' : ''
@@ -45,7 +58,7 @@ export default function FAQ() {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-4">
-                      <p className="text-slate-300">{faq.answer}</p>
+                      <p className="text-slate-300">{isRTL ? faq.answer_ar : faq.answer_en}</p>
                     </div>
                   </motion.div>
                 )}

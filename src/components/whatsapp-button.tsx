@@ -1,10 +1,21 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLanguage } from '@/contexts/language-context'
+import { contactSeed } from '@/lib/content-types'
 
 export default function WhatsAppButton() {
   const { language } = useLanguage()
+  const [whatsappNumber, setWhatsappNumber] = useState(contactSeed.whatsapp_number)
+
+  useEffect(() => {
+    fetch('/api/content/contact')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.whatsapp_number) setWhatsappNumber(data.whatsapp_number)
+      })
+      .catch(() => {})
+  }, [])
 
   const tooltipText = language === 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp'
   const isRTL = language === 'ar'
@@ -17,7 +28,7 @@ export default function WhatsAppButton() {
       <div className="relative order-2">
         <span className="absolute inset-0 rounded-full bg-green-500 opacity-40 animate-ping" />
         <a
-          href="https://wa.me/201092020733"
+          href={`https://wa.me/${whatsappNumber}`}
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"

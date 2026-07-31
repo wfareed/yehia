@@ -1,17 +1,46 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/language-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { motion } from 'framer-motion'
-import { GraduationCap, Globe, Users, Award, MapPin, Star, ArrowRight, CheckCircle } from 'lucide-react'
+import { MapPin, Star, ArrowRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import FAQ from '@/components/faq'
+import { homeSeed, HomeContent, aboutSeed, AboutContent } from '@/lib/content-types'
+import { iconMap } from '@/lib/icon-map'
+
+const COUNTRY_GRADIENTS = [
+  "from-blue-900/80 to-red-900/60",
+  "from-blue-900/80 to-red-800/60",
+  "from-sky-900/80 to-yellow-900/50",
+  "from-red-900/80 to-slate-800/60",
+  "from-yellow-900/60 to-slate-800/80",
+  "from-green-900/70 to-orange-900/50",
+  "from-red-900/70 to-blue-900/50",
+  "from-green-900/70 to-slate-800/60",
+  "from-sky-900/70 to-slate-800/60",
+  "from-yellow-900/60 to-green-900/60",
+]
 
 export default function Home() {
-  const { t, dir } = useLanguage()
+  const { t, language } = useLanguage()
+  const ar = language === 'ar'
   const heroVideoRef = useRef<HTMLVideoElement>(null)
+  const [content, setContent] = useState<HomeContent>(homeSeed)
+  const [about, setAbout] = useState<AboutContent>(aboutSeed)
+
+  useEffect(() => {
+    fetch('/api/content/home')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => data && setContent(data))
+      .catch(() => {})
+    fetch('/api/content/about')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => data && setAbout(data))
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     const video = heroVideoRef.current
@@ -29,69 +58,28 @@ export default function Home() {
     return () => video.removeEventListener('loadeddata', tryPlay)
   }, [])
 
-  const services = [
-    {
-      icon: <GraduationCap className="h-8 w-8 text-emerald-400" />,
-      title: t.services.admissions,
-      description: t.services.admissionsDesc,
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-blue-400" />,
-      title: t.services.logistical,
-      description: t.services.logisticalDesc,
-    },
-    {
-      icon: <Users className="h-8 w-8 text-green-400" />,
-      title: t.services.guidance,
-      description: t.services.guidanceDesc,
-    },
-    {
-      icon: <Award className="h-8 w-8 text-orange-400" />,
-      title: t.services.support,
-      description: t.services.supportDesc,
-    },
-  ]
+  const services = content.services.map((service) => ({
+    icon: iconMap[service.icon],
+    title: ar ? service.title_ar : service.title_en,
+    description: ar ? service.description_ar : service.description_en,
+  }))
 
-  const countries = [
-    { name: "USA",          code: "us", universities: "500+", color: "from-blue-900/80 to-red-900/60" },
-    { name: "UK",           code: "gb", universities: "300+", color: "from-blue-900/80 to-red-800/60" },
-    { name: "Australia",    code: "au", universities: "200+", color: "from-sky-900/80 to-yellow-900/50" },
-    { name: "Canada",       code: "ca", universities: "250+", color: "from-red-900/80 to-slate-800/60" },
-    { name: "Germany",      code: "de", universities: "150+", color: "from-yellow-900/60 to-slate-800/80" },
-    { name: "Ireland",      code: "ie", universities: "50+",  color: "from-green-900/70 to-orange-900/50" },
-    { name: "Malaysia",     code: "my", universities: "100+", color: "from-red-900/70 to-blue-900/50" },
-    { name: "UAE",          code: "ae", universities: "80+",  color: "from-green-900/70 to-slate-800/60" },
-    { name: "New Zealand",  code: "nz", universities: "30+",  color: "from-sky-900/70 to-slate-800/60" },
-    { name: "South Africa", code: "za", universities: "40+",  color: "from-yellow-900/60 to-green-900/60" },
-  ]
+  const countries = content.countries.map((country, index) => ({
+    name: country.name,
+    code: country.code,
+    universities: country.universities,
+    color: COUNTRY_GRADIENTS[index % COUNTRY_GRADIENTS.length],
+  }))
 
-  const stats = [
-    { value: "5000+", label: "Students Placed" },
-    { value: "50+", label: "Partner Universities" },
-    { value: "15+", label: "Countries" },
-    { value: "95%", label: "Success Rate" },
-  ]
+  const stats = content.stats.map((stat) => ({
+    value: stat.value,
+    label: ar ? stat.label_ar : stat.label_en,
+  }))
 
-  const testimonials = [
-    {
-      name: "Ahmed Al-Rashid",
-      country: "Studying in UK",
-      rating: 5,
-      text: "Vision Edge made my dream of studying in the UK a reality. Their guidance throughout the application process was exceptional.",
-    },
-    {
-      name: "Sara Hassan",
-      country: "Studying in Canada",
-      rating: 5,
-      text: "From university selection to visa approval, Vision Edge was there every step of the way. Highly recommended!",
-    },
-    {
-      name: "Omar Khalid",
-      country: "Studying in Australia",
-      rating: 5,
-      text: "The team at Vision Edge provided excellent support and helped me secure a scholarship. I couldn't have done it without them.",
-    },
-  ]
+  const testimonials = content.testimonials
+
+  const whyChooseUsTitle = ar ? about.whyChooseUs_ar : about.whyChooseUs_en
+  const whyChooseUsPoints = about.points.map((p) => (ar ? p.text_ar : p.text_en))
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -140,10 +128,10 @@ export default function Home() {
             className="max-w-2xl text-left rtl:text-right"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              {t.hero.title}
+              {ar ? content.hero_title_ar : content.hero_title_en}
             </h1>
             <p className="text-base md:text-lg text-slate-200 mb-8 max-w-xl drop-shadow-md">
-              {t.hero.subtitle}
+              {ar ? content.hero_subtitle_ar : content.hero_subtitle_en}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <Button variant="gradient" size="lg" className="text-lg" asChild>
@@ -205,10 +193,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              {t.services.title}
+              {ar ? content.services_title_ar : content.services_title_en}
             </h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              {t.services.subtitle}
+              {ar ? content.services_subtitle_ar : content.services_subtitle_en}
             </p>
           </motion.div>
 
@@ -226,7 +214,9 @@ export default function Home() {
               >
                 <Card className="h-full bg-slate-800 border-slate-700 hover:border-emerald-500 transition-colors">
                   <CardHeader>
-                    <div className="mb-4">{service.icon}</div>
+                    <div className="mb-4">
+                      <service.icon className="h-8 w-8 text-emerald-400" />
+                    </div>
                     <CardTitle className="text-white">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -252,10 +242,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              {t.destinations.title}
+              {ar ? content.destinations_title_ar : content.destinations_title_en}
             </h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              {t.destinations.subtitle}
+              {ar ? content.destinations_subtitle_ar : content.destinations_subtitle_en}
             </p>
           </motion.div>
 
@@ -310,10 +300,10 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                {t.about.whyChooseUs}
+                {whyChooseUsTitle}
               </h2>
               <div className="space-y-4">
-                {t.about.points.map((point, index) => (
+                {whyChooseUsPoints.map((point, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <CheckCircle className="h-6 w-6 text-emerald-400 flex-shrink-0 mt-1" />
                     <p className="text-slate-300">{point}</p>
@@ -347,10 +337,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              {t.testimonials.title}
+              {ar ? content.testimonials_title_ar : content.testimonials_title_en}
             </h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              {t.testimonials.subtitle}
+              {ar ? content.testimonials_subtitle_ar : content.testimonials_subtitle_en}
             </p>
           </motion.div>
 
@@ -401,10 +391,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              {t.cta.title}
+              {ar ? content.cta_title_ar : content.cta_title_en}
             </h2>
             <p className="text-slate-200 text-lg mb-8 max-w-2xl mx-auto">
-              {t.cta.description}
+              {ar ? content.cta_description_ar : content.cta_description_en}
             </p>
             <Button variant="outline" size="lg" className="text-lg border-white text-white hover:bg-white hover:text-emerald-900" asChild>
               <Link href="/contact">

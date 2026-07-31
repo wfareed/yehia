@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Menu, X, Globe, Moon, Sun, Phone } from 'lucide-react'
 import Logo from '@/components/logo'
 import { useTheme } from 'next-themes'
+import { navSeed, NavLink } from '@/lib/content-types'
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage()
@@ -16,12 +17,22 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [headerLinks, setHeaderLinks] = useState<NavLink[]>(navSeed.headerLinks)
 
   useEffect(() => {
     setMounted(true)
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    fetch('/api/content/nav')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.headerLinks) setHeaderLinks(data.headerLinks)
+      })
+      .catch(() => {})
   }, [])
 
   useEffect(() => {
@@ -32,15 +43,10 @@ export default function Header() {
     setLanguage(language === 'en' ? 'ar' : 'en')
   }
 
-  const navItems = [
-    { href: '/', label: t.nav.home },
-    { href: '/about', label: t.nav.about },
-    { href: '/services', label: t.nav.services },
-    { href: '/countries', label: t.nav.countries },
-    { href: '/discover-egypt', label: t.nav.discoverEgypt },
-    { href: '/testimonials', label: t.nav.testimonials },
-    { href: '/blog', label: t.nav.blog },
-  ]
+  const navItems = headerLinks.map((link) => ({
+    href: link.href,
+    label: language === 'ar' ? link.label_ar : link.label_en,
+  }))
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)

@@ -1,20 +1,34 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/language-context'
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUp, Send } from 'lucide-react'
 import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
+import { navSeed, NavLink, contactSeed, ContactContent } from '@/lib/content-types'
 
 export default function Footer() {
   const { t, dir, language } = useLanguage()
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [footerLinks, setFooterLinks] = useState<NavLink[]>(navSeed.footerLinks)
+  const [contact, setContact] = useState<ContactContent>(contactSeed)
 
-  const address = language === 'ar' 
-    ? '53 شارع الفيروز - المجاورة العاشرة - الحي الأول - الشيخ زايد'
-    : '53 - Al Fayrouz street - 10th neighborhood - Area 1 - Sheikh Zayed'
+  useEffect(() => {
+    fetch('/api/content/nav')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.footerLinks) setFooterLinks(data.footerLinks)
+      })
+      .catch(() => {})
+    fetch('/api/content/contact')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => data && setContact(data))
+      .catch(() => {})
+  }, [])
+
+  const address = language === 'ar' ? contact.address_ar : contact.address_en
 
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,16 +53,16 @@ export default function Footer() {
               {t.about.description}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-300 hover:text-white transition-colors">
+              <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-300 hover:text-white transition-colors">
+              <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-300 hover:text-white transition-colors">
+              <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-slate-300 hover:text-white transition-colors">
+              <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -58,26 +72,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  {t.nav.about}
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  {t.nav.services}
-                </Link>
-              </li>
-              <li>
-                <Link href="/countries" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  {t.nav.countries}
-                </Link>
-              </li>
-              <li>
-                <Link href="/scholarships" className="text-slate-300 hover:text-white transition-colors text-sm">
-                  {t.nav.scholarships}
-                </Link>
-              </li>
+              {footerLinks.map((link) => (
+                <li key={link.id}>
+                  <Link href={link.href} className="text-slate-300 hover:text-white transition-colors text-sm">
+                    {language === 'ar' ? link.label_ar : link.label_en}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -115,11 +116,11 @@ export default function Footer() {
               </li>
               <li className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
                 <Phone className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">+201092020733</span>
+                <span className="text-slate-300 text-sm">{contact.phone}</span>
               </li>
               <li className={`flex items-center ${dir === 'rtl' ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
                 <Mail className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-slate-300 text-sm">info@visionedge-eg.com</span>
+                <span className="text-slate-300 text-sm">{contact.email}</span>
               </li>
             </ul>
           </div>

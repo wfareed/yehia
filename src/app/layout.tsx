@@ -3,9 +3,6 @@ import { Cairo } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/lib/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import WhatsAppButton from "@/components/whatsapp-button"
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -40,12 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <Header />
-            <main className="min-h-screen">
-              {children}
-            </main>
-            <Footer />
-            <WhatsAppButton />
+            {children}
           </LanguageProvider>
         </ThemeProvider>
       </body>
