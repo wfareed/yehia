@@ -56,5 +56,5 @@ export async function POST(req: NextRequest) {
   const bytes = Buffer.from(await file.arrayBuffer())
   fs.writeFileSync(path.join(uploadsDir, filename), bytes)
 
-  return NextResponse.json({ url: `/uploads/${filename}`, type: isImage ? "image" : "video" })
+  return NextResponse.json({ url: `/api/uploads/${filename}`, type: isImage ? "image" : "video" })
 }

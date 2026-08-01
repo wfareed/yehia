@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { HelpCircle, Link2, KeyRound, Users, Home, Mail, Newspaper } from "lucide-react"
+import { HelpCircle, Link2, KeyRound, Users, Home, Mail, Newspaper, Handshake } from "lucide-react"
 
 const sections = [
   {
@@ -26,6 +26,12 @@ const sections = [
     icon: Newspaper,
     title: "Blog / News",
     description: "Add, edit, publish/unpublish, or remove blog posts and news articles.",
+  },
+  {
+    href: "/admin/partners",
+    icon: Handshake,
+    title: "Partners",
+    description: "Edit the partners page heading and manage the list of partner names and logos.",
   },
   {
     href: "/admin/faq",

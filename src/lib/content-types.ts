@@ -61,6 +61,7 @@ export const navSeed: NavContent = {
     { id: "nav-discover-egypt", href: "/discover-egypt", label_en: "Discover Egypt", label_ar: "اكتشف مصر" },
     { id: "nav-testimonials", href: "/testimonials", label_en: "Testimonials", label_ar: "الشهادات" },
     { id: "nav-blog", href: "/blog", label_en: "Blog", label_ar: "المدونة" },
+    { id: "nav-partners", href: "/partners", label_en: "Partners", label_ar: "الشركاء" },
     { id: "nav-contact", href: "/contact", label_en: "Contact Us", label_ar: "اتصل بنا" },
   ],
   footerLinks: [
@@ -68,6 +69,7 @@ export const navSeed: NavContent = {
     { id: "footer-services", href: "/services", label_en: "Services", label_ar: "الخدمات" },
     { id: "footer-countries", href: "/countries", label_en: "Countries", label_ar: "الدول" },
     { id: "footer-scholarships", href: "/scholarships", label_en: "Scholarships", label_ar: "المنح" },
+    { id: "footer-partners", href: "/partners", label_en: "Partners", label_ar: "الشركاء" },
     { id: "footer-contact", href: "/contact", label_en: "Contact Us", label_ar: "اتصل بنا" },
   ],
 }
@@ -278,7 +280,7 @@ export const homeSeed: HomeContent = {
     "نقدم الاستشارات والقبول والتحضيرات قبل السفر، نسهّل جميع الإجراءات حتى الوصول وبدء الدراسة.",
   stats: [
     { id: "stat-1", value: "5000+", label_en: "Students Placed", label_ar: "طالب تم إلحاقه" },
-    { id: "stat-2", value: "50+", label_en: "Partner Universities", label_ar: "جامعة شريكة" },
+    { id: "stat-2", value: "50+", label_en: "Partners", label_ar: "جامعة شريكة" },
     { id: "stat-3", value: "15+", label_en: "Countries", label_ar: "دولة" },
     { id: "stat-4", value: "95%", label_en: "Success Rate", label_ar: "نسبة النجاح" },
   ],
@@ -424,4 +426,27 @@ export const aboutSeed: AboutContent = {
     { id: "team-5", name: "", role_en: "Partnerships Director", role_ar: "مدير الشراكات", initials: "OS" },
     { id: "team-6", name: "", role_en: "Operations Manager", role_ar: "مديرة العمليات", initials: "FH" },
   ],
+}
+
+export interface PartnerItem {
+  id: string
+  name: string
+  logo: string
+  website: string
+}
+
+export interface PartnersContent {
+  title_en: string
+  title_ar: string
+  subtitle_en: string
+  subtitle_ar: string
+  partners: PartnerItem[]
+}
+
+export const partnersSeed: PartnersContent = {
+  title_en: "Our Partners",
+  title_ar: "شركاؤنا",
+  subtitle_en: "We collaborate with leading universities and institutions around the world.",
+  subtitle_ar: "نتعاون مع أفضل الجامعات والمؤسسات حول العالم.",
+  partners: [],
 }
