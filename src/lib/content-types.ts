@@ -59,9 +59,9 @@ export const navSeed: NavContent = {
     { id: "nav-services", href: "/services", label_en: "Services", label_ar: "الخدمات" },
     { id: "nav-countries", href: "/countries", label_en: "Countries", label_ar: "الدول" },
     { id: "nav-discover-egypt", href: "/discover-egypt", label_en: "Discover Egypt", label_ar: "اكتشف مصر" },
-    { id: "nav-testimonials", href: "/testimonials", label_en: "Testimonials", label_ar: "الشهادات" },
     { id: "nav-blog", href: "/blog", label_en: "Blog", label_ar: "المدونة" },
     { id: "nav-partners", href: "/partners", label_en: "Partners", label_ar: "الشركاء" },
+    { id: "nav-promotions", href: "/promotions", label_en: "Promotions", label_ar: "العروض" },
     { id: "nav-contact", href: "/contact", label_en: "Contact Us", label_ar: "اتصل بنا" },
   ],
   footerLinks: [
@@ -70,6 +70,7 @@ export const navSeed: NavContent = {
     { id: "footer-countries", href: "/countries", label_en: "Countries", label_ar: "الدول" },
     { id: "footer-scholarships", href: "/scholarships", label_en: "Scholarships", label_ar: "المنح" },
     { id: "footer-partners", href: "/partners", label_en: "Partners", label_ar: "الشركاء" },
+    { id: "footer-promotions", href: "/promotions", label_en: "Promotions", label_ar: "العروض" },
     { id: "footer-contact", href: "/contact", label_en: "Contact Us", label_ar: "اتصل بنا" },
   ],
 }
@@ -449,4 +450,29 @@ export const partnersSeed: PartnersContent = {
   subtitle_en: "We collaborate with leading universities and institutions around the world.",
   subtitle_ar: "نتعاون مع أفضل الجامعات والمؤسسات حول العالم.",
   partners: [],
+}
+
+export interface PromotionItem {
+  id: string
+  title_en: string
+  title_ar: string
+  description_en: string
+  description_ar: string
+  image: string
+}
+
+export interface PromotionsContent {
+  title_en: string
+  title_ar: string
+  subtitle_en: string
+  subtitle_ar: string
+  promotions: PromotionItem[]
+}
+
+export const promotionsSeed: PromotionsContent = {
+  title_en: "Promotions",
+  title_ar: "العروض",
+  subtitle_en: "Special offers and promotions for our students.",
+  subtitle_ar: "عروض وتخفيضات خاصة لطلابنا.",
+  promotions: [],
 }

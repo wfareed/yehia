@@ -4,7 +4,7 @@ import React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { LayoutDashboard, HelpCircle, Link2, KeyRound, LogOut, ExternalLink, Users, Home, Mail, Newspaper, Handshake } from "lucide-react"
+import { LayoutDashboard, HelpCircle, Link2, KeyRound, LogOut, ExternalLink, Users, Home, Mail, Newspaper, Handshake, Tag } from "lucide-react"
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -13,6 +13,7 @@ const navItems = [
   { href: "/admin/contact", label: "Contact Page", icon: Mail },
   { href: "/admin/blog", label: "Blog / News", icon: Newspaper },
   { href: "/admin/partners", label: "Partners", icon: Handshake },
+  { href: "/admin/promotions", label: "Promotions", icon: Tag },
   { href: "/admin/faq", label: "FAQ", icon: HelpCircle },
   { href: "/admin/links", label: "Header & Footer Links", icon: Link2 },
   { href: "/admin/settings", label: "Change Password", icon: KeyRound },

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { readJson } from "@/lib/data-store"
-import { faqSeed, navSeed, aboutSeed, homeSeed, contactSeed, blogSeed, partnersSeed } from "@/lib/content-types"
+import { faqSeed, navSeed, aboutSeed, homeSeed, contactSeed, blogSeed, partnersSeed, promotionsSeed } from "@/lib/content-types"
 
 // Whitelist of publicly-readable content sections and their default seed.
 // Add an entry here whenever a new admin-editable section is introduced.
@@ -12,6 +12,7 @@ const CONTENT_SEEDS: Record<string, unknown> = {
   contact: contactSeed,
   blog: blogSeed,
   partners: partnersSeed,
+  promotions: promotionsSeed,
 }
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ key: string }> }) {
