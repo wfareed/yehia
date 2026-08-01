@@ -250,15 +250,18 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="py-12 bg-slate-800">
         <div className="container mx-auto px-4">
-          <div className="bg-slate-900 rounded-2xl overflow-hidden h-96 flex items-center justify-center border border-slate-700">
-            <div className="text-center">
-              <MapPin className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
-              <h3 className="text-white text-xl font-semibold mb-2">{ar ? 'موقعنا' : 'Our Location'}</h3>
-              <p className="text-slate-300">{ar ? contact.address_ar : contact.address_en}</p>
-              <p className="text-slate-400 text-sm mt-4">
-                (Google Maps integration placeholder — add your API key)
-              </p>
-            </div>
+          <h3 className="text-white text-xl font-semibold mb-4 text-center">{ar ? 'موقعنا' : 'Our Location'}</h3>
+          <div className="rounded-2xl overflow-hidden h-96 border border-slate-700">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2295.8038358887266!2d30.971933233695395!3d30.041744550203507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859930ff8e55f%3A0xc9b4b7f2391bae73!2zNTMg2KfZhNmB2YrYsdmI2LIsIFNlY29uZCBBbCBTaGVpa2ggWmF5ZWQsIEdpemEgR292ZXJub3JhdGUgMzI0MTMyMw!5e1!3m2!1sen!2seg!4v1785612065637!5m2!1sen!2seg"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Vision Edge Location"
+            />
           </div>
         </div>
       </section>

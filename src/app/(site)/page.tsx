@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/language-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { motion } from 'framer-motion'
-import { MapPin, Star, ArrowRight, CheckCircle } from 'lucide-react'
+import { Star, ArrowRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import FAQ from '@/components/faq'
 import { homeSeed, HomeContent, aboutSeed, AboutContent } from '@/lib/content-types'
@@ -318,8 +318,17 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center">
-                <MapPin className="h-32 w-32 text-white" />
+              <div className="aspect-square rounded-2xl overflow-hidden border border-slate-700">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2295.8038358887266!2d30.971933233695395!3d30.041744550203507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859930ff8e55f%3A0xc9b4b7f2391bae73!2zNTMg2KfZhNmB2YrYsdmI2LIsIFNlY29uZCBBbCBTaGVpa2ggWmF5ZWQsIEdpemEgR292ZXJub3JhdGUgMzI0MTMyMw!5e1!3m2!1sen!2seg!4v1785612065637!5m2!1sen!2seg"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Vision Edge Location"
+                />
               </div>
             </motion.div>
           </div>
