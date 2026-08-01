@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { HelpCircle, Link2, KeyRound, Users, Home, Mail, Newspaper, Handshake, Tag } from "lucide-react"
+import { HelpCircle, Link2, KeyRound, Users, Home, Mail, Newspaper, Handshake, Tag, Globe } from "lucide-react"
 
 const sections = [
   {
@@ -14,6 +14,12 @@ const sections = [
     icon: Users,
     title: "About Us Page",
     description: "Edit the hero text, why-choose-us points, mission/vision/values cards, stats, timeline, and team.",
+  },
+  {
+    href: "/admin/countries",
+    icon: Globe,
+    title: "Countries",
+    description: "Add, edit, or remove study destination countries, including flags, universities, tuition, visa info, and advantages.",
   },
   {
     href: "/admin/contact",
