@@ -73,17 +73,16 @@ export default function PromotionsClient({ initialContent }: { initialContent: P
                 const promoTitle = ar ? promo.title_ar : promo.title_en
                 const promoDescription = ar ? promo.description_ar : promo.description_en
                 return (
-                  <motion.div key={promo.id} variants={itemVariants} className="w-full sm:w-[75%] lg:w-[46%] max-w-xl mx-auto">
+                  <motion.div key={promo.id} variants={itemVariants} className="w-full sm:w-[90%] lg:w-[55%] max-w-2xl mx-auto">
                     <Card className="h-full bg-slate-800 border-slate-700 hover:border-emerald-500 transition-all overflow-hidden">
                       <CardContent className="p-0 flex flex-col items-center text-center">
                         {promo.image && (
-                          // A4 portrait aspect ratio (1 : 1.4142) for flyer-style images
-                          <div className="w-full aspect-[1/1.414] bg-slate-900 flex items-center justify-center overflow-hidden">
+                          <div className="w-full bg-slate-900 flex items-center justify-center overflow-hidden">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={promo.image}
                               alt={promoTitle || 'Promotion'}
-                              className="w-full h-full object-cover"
+                              className="w-full h-auto object-contain"
                             />
                           </div>
                         )}

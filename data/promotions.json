@@ -3,5 +3,14 @@
   "title_ar": "العروض",
   "subtitle_en": "Special offers and promotions for our students.",
   "subtitle_ar": "عروض وتخفيضات خاصة لطلابنا.",
-  "promotions": []
+  "promotions": [
+    {
+      "id": "promo-1785690821985",
+      "title_en": "",
+      "title_ar": "",
+      "description_en": "",
+      "description_ar": "",
+      "image": "/api/uploads/1785690852368-09f3a10ce038.png"
+    }
+  ]
 }
