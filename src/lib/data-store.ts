@@ -1,5 +1,6 @@
 import "server-only"
 import fs from "fs"
+import os from "os"
 import path from "path"
 
 // Allow the content storage directory to live outside the deployed project
@@ -7,8 +8,14 @@ import path from "path"
 // on hosts like Hostinger where a git-based deploy fully re-extracts the
 // project directory on every deploy, which would otherwise wipe out
 // admin-edited content regardless of .gitignore. Falls back to ./data for
-// local development.
-const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(process.cwd(), "data")
+// local development and ~/vision-edge-data/data on the server.
+const DEFAULT_DATA_DIR = process.cwd().startsWith(os.homedir())
+  ? path.join(os.homedir(), "vision-edge-data", "data")
+  : path.join(process.cwd(), "data")
+
+const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR
+
+console.log(`[data-store] Using DATA_DIR: ${DATA_DIR}`)
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) {
