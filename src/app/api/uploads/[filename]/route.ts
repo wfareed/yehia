@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
+import { UPLOADS_DIR } from "@/lib/uploads-store"
 
 export const dynamic = "force-dynamic"
 
@@ -23,7 +24,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ fil
     return NextResponse.json({ error: "Invalid filename." }, { status: 400 })
   }
 
-  const filePath = path.join(process.cwd(), "public", "uploads", filename)
+  const filePath = path.join(UPLOADS_DIR, filename)
   if (!fs.existsSync(filePath)) {
     return NextResponse.json({ error: "Not found." }, { status: 404 })
   }

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
 import crypto from "crypto"
+import { UPLOADS_DIR } from "@/lib/uploads-store"
 
 const ALLOWED_IMAGE_TYPES: Record<string, string> = {
   "image/jpeg": "jpg",
@@ -48,13 +49,12 @@ export async function POST(req: NextRequest) {
   const extension = isImage ? ALLOWED_IMAGE_TYPES[file.type] : ALLOWED_VIDEO_TYPES[file.type]
   const filename = `${Date.now()}-${crypto.randomBytes(6).toString("hex")}.${extension}`
 
-  const uploadsDir = path.join(process.cwd(), "public", "uploads")
-  if (!fs.existsSync(uploadsDir)) {
-    fs.mkdirSync(uploadsDir, { recursive: true })
+  if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true })
   }
 
   const bytes = Buffer.from(await file.arrayBuffer())
-  fs.writeFileSync(path.join(uploadsDir, filename), bytes)
+  fs.writeFileSync(path.join(UPLOADS_DIR, filename), bytes)
 
   return NextResponse.json({ url: `/api/uploads/${filename}`, type: isImage ? "image" : "video" })
 }

@@ -2,7 +2,13 @@ import "server-only"
 import fs from "fs"
 import path from "path"
 
-const DATA_DIR = path.join(process.cwd(), "data")
+// Allow the content storage directory to live outside the deployed project
+// folder (set DATA_DIR to an absolute path on the server). This is required
+// on hosts like Hostinger where a git-based deploy fully re-extracts the
+// project directory on every deploy, which would otherwise wipe out
+// admin-edited content regardless of .gitignore. Falls back to ./data for
+// local development.
+const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(process.cwd(), "data")
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) {
