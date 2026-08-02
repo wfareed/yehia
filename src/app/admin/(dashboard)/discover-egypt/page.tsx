@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Plus, Trash2, Save } from "lucide-react"
 import { discoverEgyptSeed, DiscoverEgyptContent, DiscoverEgyptBrochure, DiscoverEgyptDestination } from "@/lib/content-types"
@@ -137,12 +136,11 @@ export default function AdminDiscoverEgyptPage() {
                 multiline
               />
               <div className="space-y-2">
-                <label className="text-xs text-slate-400 uppercase tracking-wide">Download Link</label>
-                <Input
+                <label className="text-xs text-slate-400 uppercase tracking-wide">Brochure File (PDF or image)</label>
+                <MediaUpload
                   value={brochure.href}
-                  onChange={(e) => updateBrochure(brochure.id, { href: e.target.value })}
-                  className="bg-slate-900 border-slate-600 text-white"
-                  placeholder="/brochures/your-file.pdf"
+                  onChange={(url) => updateBrochure(brochure.id, { href: url })}
+                  accept="document"
                 />
               </div>
             </div>

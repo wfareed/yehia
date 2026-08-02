@@ -14,6 +14,7 @@ const CONTENT_TYPES: Record<string, string> = {
   ".mp4": "video/mp4",
   ".webm": "video/webm",
   ".ogv": "video/ogg",
+  ".pdf": "application/pdf",
 }
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ filename: string }> }) {
