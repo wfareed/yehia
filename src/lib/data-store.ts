@@ -7,11 +7,11 @@ import path from "path"
 // folder (set DATA_DIR to an absolute path on the server). This is required
 // on hosts like Hostinger where a git-based deploy fully re-extracts the
 // project directory on every deploy, which would otherwise wipe out
-// admin-edited content regardless of .gitignore. Falls back to ./data for
-// local development and ~/vision-edge-data/data on the server.
-const DEFAULT_DATA_DIR = process.cwd().startsWith(os.homedir())
-  ? path.join(os.homedir(), "vision-edge-data", "data")
-  : path.join(process.cwd(), "data")
+// admin-edited content regardless of .gitignore. Falls back to ./data on
+// Windows (local dev) and ~/vision-edge-data/data on Linux/mac (server).
+const DEFAULT_DATA_DIR = process.platform === "win32"
+  ? path.join(process.cwd(), "data")
+  : path.join(os.homedir(), "vision-edge-data", "data")
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR
 
