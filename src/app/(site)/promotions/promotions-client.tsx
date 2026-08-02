@@ -92,7 +92,7 @@ export default function PromotionsClient({ initialContent }: { initialContent: P
                               <h3 className="text-white font-semibold text-lg mb-2">{promoTitle}</h3>
                             )}
                             {promoDescription && (
-                              <p className="text-slate-300 text-sm">{promoDescription}</p>
+                              <p className="text-slate-300 text-sm whitespace-pre-wrap">{promoDescription}</p>
                             )}
                           </div>
                         )}
