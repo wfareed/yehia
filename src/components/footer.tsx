@@ -52,18 +52,38 @@ export default function Footer() {
             <p className="text-slate-300 text-sm mb-4">
               {t.about.description}
             </p>
-            <div className="flex space-x-4">
-              <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
+            <div className="flex space-x-3">
+              <a
+                href={contact.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <Facebook className="h-4 w-4 text-white" />
               </a>
-              <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a
+                href={contact.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <Twitter className="h-4 w-4 text-white" />
               </a>
-              <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a
+                href={contact.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <Instagram className="h-4 w-4 text-white" />
               </a>
-              <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a
+                href={contact.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#0A66C2] flex items-center justify-center hover:opacity-80 transition-opacity"
+              >
+                <Linkedin className="h-4 w-4 text-white" />
               </a>
             </div>
           </div>

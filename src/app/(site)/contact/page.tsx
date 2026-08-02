@@ -227,17 +227,17 @@ export default function ContactPage() {
                 <CardContent className="pt-6">
                   <h4 className="text-white font-semibold mb-4">Follow Us</h4>
                   <div className="flex space-x-4">
-                    <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
-                      <Facebook className="h-5 w-5 text-slate-300" />
+                    <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1877F2] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                      <Facebook className="h-5 w-5 text-white" />
                     </a>
-                    <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
-                      <Twitter className="h-5 w-5 text-slate-300" />
+                    <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1DA1F2] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                      <Twitter className="h-5 w-5 text-white" />
                     </a>
-                    <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
-                      <Instagram className="h-5 w-5 text-slate-300" />
+                    <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                      <Instagram className="h-5 w-5 text-white" />
                     </a>
-                    <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-emerald-900/50 transition-colors">
-                      <Linkedin className="h-5 w-5 text-slate-300" />
+                    <a href={contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#0A66C2] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                      <Linkedin className="h-5 w-5 text-white" />
                     </a>
                   </div>
                 </CardContent>
