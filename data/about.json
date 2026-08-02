@@ -1,0 +1,201 @@
+{
+  "whoWeAre_en": "Who We Are",
+  "whoWeAre_ar": "من نحن",
+  "description_en": "An educational agency specializing in organizing summer and winter camps at accredited Egyptian universities, offering comprehensive services for studying abroad and providing thorough educational consultations to help students achieve their dreams of international education.",
+  "description_ar": "وكالة تعليمية متخصصة في تنظيم المعسكرات الصيفية والشتوية في الجامعات المصرية المعتمدة، تقدم خدمات متكاملة للدراسة في الخارج واستشارات تعليمية شاملة لمساعدة الطلاب على تحقيق أحلامهم في التعليم الدولي.",
+  "whyChooseUs_en": "Why Choose Us?",
+  "whyChooseUs_ar": "لماذا Vision Edge؟",
+  "points": [
+    {
+      "id": "point-1",
+      "text_en": "Free educational consultations",
+      "text_ar": "استشارات تعليمية مجانية"
+    },
+    {
+      "id": "point-2",
+      "text_en": "Collaborations with top universities worldwide",
+      "text_ar": "شراكات مع أفضل الجامعات حول العالم"
+    },
+    {
+      "id": "point-3",
+      "text_en": "Expert guidance throughout the application process",
+      "text_ar": "توجيه متخصص خلال عملية التقديم"
+    },
+    {
+      "id": "point-4",
+      "text_en": "Visa assistance and travel preparation",
+      "text_ar": "مساعدة في التأشيرات والتحضير للسفر"
+    },
+    {
+      "id": "point-5",
+      "text_en": "24/7 support for students",
+      "text_ar": "دعم على مدار الساعة للطلاب"
+    }
+  ],
+  "valueCards": [
+    {
+      "id": "value-message",
+      "icon": "Rocket",
+      "title_en": "Our Message",
+      "title_ar": "رسالتنا",
+      "description_en": "To provide educational services with global standards that inspire ambitious youth to innovate and achieve their dreams.",
+      "description_ar": "تقديم خدمات تعليمية بمعايير عالمية تلهم الشباب الطموح للابتكار وتحقيق أحلامهم."
+    },
+    {
+      "id": "value-mission",
+      "icon": "Target",
+      "title_en": "Our Mission",
+      "title_ar": "مهمتنا",
+      "description_en": "Educational consultations and guidance to select the best language institutes and universities with reliable, high-quality services.",
+      "description_ar": "الاستشارات التعليمية والتوجيه لاختيار أفضل معاهد اللغات والجامعات بخدمات موثوقة وعالية الجودة."
+    },
+    {
+      "id": "value-vision",
+      "icon": "Eye",
+      "title_en": "Our Vision",
+      "title_ar": "رؤيتنا",
+      "description_en": "To become the leading trusted name in the Arab world for studying abroad.",
+      "description_ar": "أن نكون الاسم الموثوق الرائد في العالم العربي للدراسة في الخارج."
+    },
+    {
+      "id": "value-values",
+      "icon": "Heart",
+      "title_en": "Our Values",
+      "title_ar": "قيمنا",
+      "description_en": "Integrity • Quality • Development • Commitment — the foundation of our dealings with clients and partners.",
+      "description_ar": "النزاهة • الجودة • التطوير • الالتزام — أساس تعاملاتنا مع العملاء والشركاء."
+    }
+  ],
+  "stats": [
+    {
+      "id": "stat-students",
+      "icon": "Users",
+      "value": "5000+",
+      "label_en": "Students Placed",
+      "label_ar": "طالب تم إلحاقه"
+    },
+    {
+      "id": "stat-countries",
+      "icon": "Globe",
+      "value": "15+",
+      "label_en": "Countries",
+      "label_ar": "دولة"
+    },
+    {
+      "id": "stat-universities",
+      "icon": "Award",
+      "value": "50+",
+      "label_en": "Partners",
+      "label_ar": "جامعة شريكة"
+    },
+    {
+      "id": "stat-years",
+      "icon": "Calendar",
+      "value": "6+",
+      "label_en": "Years Experience",
+      "label_ar": "سنوات خبرة"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tl-2018",
+      "year": "2018",
+      "title_en": "Founded",
+      "title_ar": "التأسيس",
+      "description_en": "Vision Edge was established in Cairo, Egypt.",
+      "description_ar": "تأسست Vision Edge في القاهرة، مصر."
+    },
+    {
+      "id": "tl-2019",
+      "year": "2019",
+      "title_en": "First 100 Students",
+      "title_ar": "أول 100 طالب",
+      "description_en": "Successfully placed our first 100 students in international universities.",
+      "description_ar": "نجحنا في إلحاق أول 100 طالب بجامعات دولية."
+    },
+    {
+      "id": "tl-2020",
+      "year": "2020",
+      "title_en": "Global Expansion",
+      "title_ar": "التوسع العالمي",
+      "description_en": "Expanded partnerships to 10+ countries across 5 continents.",
+      "description_ar": "توسعنا في شراكات تشمل أكثر من 10 دول عبر 5 قارات."
+    },
+    {
+      "id": "tl-2021",
+      "year": "2021",
+      "title_en": "Digital Transformation",
+      "title_ar": "التحول الرقمي",
+      "description_en": "Launched our digital platform for seamless student applications.",
+      "description_ar": "أطلقنا منصتنا الرقمية لتسهيل طلبات الطلاب."
+    },
+    {
+      "id": "tl-2022",
+      "year": "2022",
+      "title_en": "1000+ Students",
+      "title_ar": "أكثر من 1000 طالب",
+      "description_en": "Reached milestone of placing 1000+ students worldwide.",
+      "description_ar": "لقد حققنا إنجازاً هاماً بتوظيف أكثر من 1000 طالب حول العالم."
+    },
+    {
+      "id": "tl-2023",
+      "year": "2023",
+      "title_en": "Award-Winning",
+      "title_ar": "جائزة التميز",
+      "description_en": "Recognized as a top educational consultancy in the Arab world.",
+      "description_ar": "حصلنا على لقب أفضل وكالة تعليمية في العالم العربي."
+    },
+    {
+      "id": "tl-2024",
+      "year": "2024",
+      "title_en": "5000+ Students",
+      "title_ar": "أكثر من 5000 طالب",
+      "description_en": "Over 5000 students successfully placed in 50+ partner universities.",
+      "description_ar": "أكثر من 5000 طالب تم إلحاقهم بنجاح في أكثر من 50 جامعة شريكة."
+    }
+  ],
+  "team": [
+    {
+      "id": "team-1",
+      "name": "Mr. Mohammed Sabbahi",
+      "role_en": "Founder & CEO",
+      "role_ar": "المؤسس والرئيس التنفيذي",
+      "initials": "MS"
+    },
+    {
+      "id": "team-2",
+      "name": "Mr. Yehia El-Samman",
+      "role_en": "Head of Operations & Co-Founder",
+      "role_ar": "رئيس العمليات والمؤسس المشارك",
+      "initials": "YS"
+    },
+    {
+      "id": "team-3",
+      "name": "",
+      "role_en": "Visa Specialist",
+      "role_ar": "متخصص التأشيرات",
+      "initials": "KR"
+    },
+    {
+      "id": "team-4",
+      "name": "",
+      "role_en": "Student Counselor",
+      "role_ar": "مستشارة الطلاب",
+      "initials": "ND"
+    },
+    {
+      "id": "team-5",
+      "name": "",
+      "role_en": "Partnerships Director",
+      "role_ar": "مدير الشراكات",
+      "initials": "OS"
+    },
+    {
+      "id": "team-6",
+      "name": "",
+      "role_en": "Operations Manager",
+      "role_ar": "مديرة العمليات",
+      "initials": "FH"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": "faq-1",
+      "question_en": "Is the consultation really free?",
+      "answer_en": "Yes! We provide completely free educational consultations. Our service is free for students from the initial consultation through to acceptance and enrollment.",
+      "question_ar": "هل الاستشارة مجانية حقاً؟",
+      "answer_ar": "نعم! نقدم استشارات تعليمية مجانية تماماً. خدمتنا مجانية للطلاب من الاستشارة الأولية وحتى القبول والتسجيل."
+    },
+    {
+      "id": "faq-2",
+      "question_en": "What support do you provide after arrival?",
+      "answer_en": "We arrange airport pickup, help with accommodation, assist with bank account setup, and provide ongoing support throughout your study period. We are available 24/7 for our students.",
+      "question_ar": "ما الدعم الذي تقدمونه بعد الوصول؟",
+      "answer_ar": "نرتب الاستقبال في المطار، ونساعد في السكن، ونساعد في إعداد الحساب البنكي، ونقدم دعماً مستمراً طوال فترة دراستك. نحن متاحون على مدار الساعة لطلابنا."
+    }
+  ]
+}

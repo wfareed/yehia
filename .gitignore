@@ -27,12 +27,8 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# admin panel content storage (persists on the server, not tracked in git)
-/data/*.json
-
-# admin-uploaded media (images/videos), persists on the server, not tracked in git
-/public/uploads/*
-!/public/uploads/.gitkeep
+# admin credentials (contains password hash - keep out of git history for security)
+/data/admins.json
 
 # vercel
 .vercel

@@ -1,0 +1,102 @@
+{
+  "headerLinks": [
+    {
+      "id": "nav-home",
+      "href": "/",
+      "label_en": "Home",
+      "label_ar": "الرئيسية"
+    },
+    {
+      "id": "nav-about",
+      "href": "/about",
+      "label_en": "About Us",
+      "label_ar": "من نحن"
+    },
+    {
+      "id": "nav-services",
+      "href": "/services",
+      "label_en": "Services",
+      "label_ar": "الخدمات"
+    },
+    {
+      "id": "nav-countries",
+      "href": "/countries",
+      "label_en": "Countries",
+      "label_ar": "الدول"
+    },
+    {
+      "id": "nav-discover-egypt",
+      "href": "/discover-egypt",
+      "label_en": "Discover Egypt",
+      "label_ar": "اكتشف مصر"
+    },
+    {
+      "id": "nav-blog",
+      "href": "/blog",
+      "label_en": "Blog",
+      "label_ar": "المدونة"
+    },
+    {
+      "id": "nav-partners",
+      "href": "/partners",
+      "label_en": "Partners",
+      "label_ar": "الشركاء"
+    },
+    {
+      "id": "nav-promotions",
+      "href": "/promotions",
+      "label_en": "Promotions",
+      "label_ar": "العروض"
+    },
+    {
+      "id": "nav-contact",
+      "href": "/contact",
+      "label_en": "Contact Us",
+      "label_ar": "اتصل بنا"
+    }
+  ],
+  "footerLinks": [
+    {
+      "id": "footer-about",
+      "href": "/about",
+      "label_en": "About Us",
+      "label_ar": "من نحن"
+    },
+    {
+      "id": "footer-services",
+      "href": "/services",
+      "label_en": "Services",
+      "label_ar": "الخدمات"
+    },
+    {
+      "id": "footer-countries",
+      "href": "/countries",
+      "label_en": "Countries",
+      "label_ar": "الدول"
+    },
+    {
+      "id": "footer-scholarships",
+      "href": "/scholarships",
+      "label_en": "Scholarships",
+      "label_ar": "المنح"
+    },
+    {
+      "id": "footer-partners",
+      "href": "/partners",
+      "label_en": "Partners",
+      "label_ar": "الشركاء"
+    },
+    {
+      "id": "footer-promotions",
+      "href": "/promotions",
+      "label_en": "Promotions",
+      "label_ar": "العروض"
+    },
+    {
+      "id": "footer-contact",
+      "href": "/contact",
+      "label_en": "Contact Us",
+      "label_ar": "اتصل بنا"
+    }
+  ]
+}
