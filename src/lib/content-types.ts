@@ -596,3 +596,121 @@ export const countriesPageSeed: CountriesPageContent = {
     },
   ],
 }
+
+export interface DiscoverEgyptBrochure {
+  id: string
+  title_en: string
+  title_ar: string
+  description_en: string
+  description_ar: string
+  href: string
+}
+
+export interface DiscoverEgyptDestination {
+  id: string
+  image: string
+  icon: IconName
+  title_en: string
+  title_ar: string
+  description_en: string
+  description_ar: string
+}
+
+export interface DiscoverEgyptContent {
+  brochures: DiscoverEgyptBrochure[]
+  destinations: DiscoverEgyptDestination[]
+}
+
+export const discoverEgyptSeed: DiscoverEgyptContent = {
+  brochures: [
+    {
+      id: "brochure-1",
+      title_en: "Egypt Educational & Tourism Programs Guide",
+      title_ar: "دليل البرامج التعليمية والسياحية في مصر",
+      description_en: "Explore educational programs, cultural visits, and tourism activities available for students.",
+      description_ar: "تعرف على البرامج التعليمية والزيارات الثقافية والأنشطة السياحية المتاحة للطلاب.",
+      href: "/brochures/egypt-educational-tourism-guide.pdf",
+    },
+    {
+      id: "brochure-2",
+      title_en: "Egypt Adventure Camps Brochure",
+      title_ar: "دليل معسكرات المغامرة في مصر",
+      description_en: "Discover trips, camps, and recreational activities across Egypt’s most famous destinations.",
+      description_ar: "اكتشف الرحلات والمعسكرات والأنشطة الترفيهية في أشهر وجهات مصر.",
+      href: "/brochures/egypt-adventure-camps-brochure.pdf",
+    },
+    {
+      id: "brochure-3",
+      title_en: "Professional Courses Brochure",
+      title_ar: "دليل الدورات الاحترافية",
+      description_en: "Explore professional training courses and accredited certifications to develop your skills.",
+      description_ar: "تعرف على الدورات التدريبية الاحترافية والشهادات المعتمدة لتطوير المهارات.",
+      href: "/brochures/professional-courses-brochure.pdf",
+    },
+  ],
+  destinations: [
+    {
+      id: "dest-1",
+      image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=80",
+      icon: "Landmark",
+      title_en: "Pyramids & Sphinx",
+      title_ar: "الأهرامات وأبو الهول",
+      description_en: "A visit to the Giza Pyramids and Sphinx gives students a direct encounter with one of history’s greatest wonders.",
+      description_ar: "زيارة أهرامات الجيزة وأبو الهول تمنح الطلاب تجربة مباشرة مع واحدة من أعظم عجائب التاريخ.",
+    },
+    {
+      id: "dest-2",
+      image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=80",
+      icon: "Building2",
+      title_en: "Grand Egyptian Museum",
+      title_ar: "المتحف المصري الكبير",
+      description_en: "A world-class destination showcasing the treasures of ancient Egyptian civilization, including Tutankhamun collections.",
+      description_ar: "وجهة عالمية تعرض كنوز الحضارة المصرية القديمة، بما في ذلك مجموعات توت عنخ آمون.",
+    },
+    {
+      id: "dest-3",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/MS_Mirage_1_Nile_cruise.JPG?width=1200",
+      icon: "Ship",
+      title_en: "Nile Cruise",
+      title_ar: "رحلات النيل",
+      description_en: "River cruises between Luxor and Aswan combine scenic landscapes with historic temples along the Nile banks.",
+      description_ar: "رحلات نهرية بين الأقصر وأسوان تجمع بين المناظر الطبيعية والمعابد التاريخية على ضفاف النيل.",
+    },
+    {
+      id: "dest-4",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Karnak_Temple,_Ram_Road.JPG?width=1200",
+      icon: "Sparkles",
+      title_en: "Famous Temples",
+      title_ar: "المعابد الشهيرة",
+      description_en: "Discover Karnak, Luxor, Philae, and Abu Simbel temples, where inscriptions tell stories of kings and civilization.",
+      description_ar: "اكتشف معابد الكرنك والأقصر وفيلة وأبو سمبل، حيث تروي النقوش قصص الملوك والحضارة.",
+    },
+    {
+      id: "dest-5",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+      icon: "Palmtree",
+      title_en: "Healing Tourism",
+      title_ar: "السياحة العلاجية",
+      description_en: "Egypt features natural wellness destinations such as oases, Siwa, and Safaga, known for climate, sands, and mineral waters.",
+      description_ar: "تتميز مصر بمناطق علاجية طبيعية مثل الواحات وسيوة وسفاجا، المعروفة بالمناخ والرمال والمياه المعدنية.",
+    },
+    {
+      id: "dest-6",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mosque_of_Muhammad_Ali,_Cairo2026_16.jpg?width=1200",
+      icon: "Church",
+      title_en: "Religious Tourism",
+      title_ar: "السياحة الدينية",
+      description_en: "The Holy Family route, historic mosques, and ancient monasteries make Egypt an important religious tourism hub.",
+      description_ar: "مسار العائلة المقدسة، المساجد التاريخية، والأديرة القديمة تجعل مصر مركزاً مهماً للسياحة الدينية.",
+    },
+    {
+      id: "dest-7",
+      image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1200&q=80",
+      icon: "Waves",
+      title_en: "Coastal Tourism",
+      title_ar: "السياحة الساحلية",
+      description_en: "Enjoy the Red Sea and Mediterranean coasts, from Sharm El Sheikh and Hurghada to the North Coast and Alexandria.",
+      description_ar: "استمتع بسواحل البحر الأحمر والمتوسط، من شرم الشيخ والغردقة إلى الساحل الشمالي والإسكندرية.",
+    },
+  ],
+}
