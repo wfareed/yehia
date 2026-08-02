@@ -67,15 +67,15 @@ export default function PromotionsClient({ initialContent }: { initialContent: P
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="flex flex-wrap justify-center gap-10"
             >
               {content.promotions.map((promo) => {
                 const promoTitle = ar ? promo.title_ar : promo.title_en
                 const promoDescription = ar ? promo.description_ar : promo.description_en
                 return (
-                  <motion.div key={promo.id} variants={itemVariants}>
+                  <motion.div key={promo.id} variants={itemVariants} className="w-full sm:w-[75%] lg:w-[46%] max-w-xl mx-auto">
                     <Card className="h-full bg-slate-800 border-slate-700 hover:border-emerald-500 transition-all overflow-hidden">
-                      <CardContent className="p-0">
+                      <CardContent className="p-0 flex flex-col items-center text-center">
                         {promo.image && (
                           // A4 portrait aspect ratio (1 : 1.4142) for flyer-style images
                           <div className="w-full aspect-[1/1.414] bg-slate-900 flex items-center justify-center overflow-hidden">
@@ -88,7 +88,7 @@ export default function PromotionsClient({ initialContent }: { initialContent: P
                           </div>
                         )}
                         {(promoTitle || promoDescription) && (
-                          <div className="p-6">
+                          <div className="p-6 flex flex-col items-center text-center">
                             {promoTitle && (
                               <h3 className="text-white font-semibold text-lg mb-2">{promoTitle}</h3>
                             )}
