@@ -93,13 +93,15 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.id}>
-                  <Link href={link.href} className="text-slate-300 hover:text-white transition-colors text-sm">
-                    {language === 'ar' ? link.label_ar : link.label_en}
-                  </Link>
-                </li>
-              ))}
+              {footerLinks
+                .filter((link) => link.href !== '/countries')
+                .map((link) => (
+                  <li key={link.id}>
+                    <Link href={link.href} className="text-slate-300 hover:text-white transition-colors text-sm">
+                      {language === 'ar' ? link.label_ar : link.label_en}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 

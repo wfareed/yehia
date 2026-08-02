@@ -43,10 +43,12 @@ export default function Header() {
     setLanguage(language === 'en' ? 'ar' : 'en')
   }
 
-  const navItems = headerLinks.map((link) => ({
-    href: link.href,
-    label: language === 'ar' ? link.label_ar : link.label_en,
-  }))
+  const navItems = headerLinks
+    .filter((link) => link.href !== '/countries')
+    .map((link) => ({
+      href: link.href,
+      label: language === 'ar' ? link.label_ar : link.label_en,
+    }))
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)
