@@ -7,8 +7,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { contactSeed, ContactContent } from '@/lib/content-types'
+import { XIcon } from '@/components/icons/x-icon'
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
@@ -230,8 +231,8 @@ export default function ContactPage() {
                     <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1877F2] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
                       <Facebook className="h-5 w-5 text-white" />
                     </a>
-                    <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1DA1F2] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
-                      <Twitter className="h-5 w-5 text-white" />
+                    <a href={contact.social.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                      <XIcon className="h-5 w-5 text-white" />
                     </a>
                     <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
                       <Instagram className="h-5 w-5 text-white" />

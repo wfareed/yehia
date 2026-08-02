@@ -3,10 +3,11 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/language-context'
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUp, Send } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUp, Send } from 'lucide-react'
 import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
 import { navSeed, NavLink, contactSeed, ContactContent } from '@/lib/content-types'
+import { XIcon } from '@/components/icons/x-icon'
 
 export default function Footer() {
   const { t, dir, language } = useLanguage()
@@ -65,9 +66,9 @@ export default function Footer() {
                 href={contact.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-80 transition-opacity"
+                className="w-9 h-9 rounded-full bg-black flex items-center justify-center hover:opacity-80 transition-opacity"
               >
-                <Twitter className="h-4 w-4 text-white" />
+                <XIcon className="h-4 w-4 text-white" />
               </a>
               <a
                 href={contact.social.instagram}
