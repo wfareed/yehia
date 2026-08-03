@@ -53,6 +53,7 @@ export default function BlogPostPage() {
   const title = ar ? post.title_ar : post.title_en
   const category = ar ? post.category_ar : post.category_en
   const readTime = ar ? post.read_time_ar : post.read_time_en
+  const excerpt = ar ? post.excerpt_ar : post.excerpt_en
 
   return (
     <div className="dark">
@@ -94,6 +95,14 @@ export default function BlogPostPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto space-y-6"
           >
+            {excerpt.trim() && (
+              <p className="text-slate-200 text-lg leading-relaxed font-medium">{excerpt}</p>
+            )}
+            {post.blocks.length === 0 && !excerpt.trim() && (
+              <p className="text-slate-400 italic">
+                {ar ? 'لا يوجد محتوى إضافي لهذا المقال بعد.' : 'No additional content has been added to this article yet.'}
+              </p>
+            )}
             {post.blocks.map((block) => {
               if (block.type === 'paragraph') {
                 const text = ar ? block.text_ar : block.text_en
