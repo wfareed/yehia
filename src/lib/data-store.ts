@@ -13,7 +13,7 @@ const DEFAULT_DATA_DIR = process.platform === "win32"
   ? path.join(process.cwd(), "data")
   : path.join(os.homedir(), "vision-edge-data", "data")
 
-const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR
+export const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR
 
 console.log(`[data-store] Using DATA_DIR: ${DATA_DIR}`)
 

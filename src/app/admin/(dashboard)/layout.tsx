@@ -4,10 +4,11 @@ import React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { LayoutDashboard, HelpCircle, Link2, KeyRound, LogOut, ExternalLink, Users, Home, Mail, Newspaper, Handshake, Tag, Globe, MapPin } from "lucide-react"
+import { LayoutDashboard, HelpCircle, Link2, KeyRound, LogOut, ExternalLink, Users, Home, Mail, Newspaper, Handshake, Tag, Globe, MapPin, BarChart3 } from "lucide-react"
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/home", label: "Home Page", icon: Home },
   { href: "/admin/about", label: "About Us Page", icon: Users },
   { href: "/admin/countries", label: "Countries", icon: Globe },
